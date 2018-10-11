@@ -1,34 +1,50 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Input, Menu } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
-import RecipeSearchInput from '../recipes/RecipeSearchInput';
 
-const Header = () => (
-  <header>
-    <nav>
-      <div className="nav-wrapper">
-        <Link to='/' className="brand-logo">Logo</Link>
-        <a href="/" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-        <RecipeSearchInput />
-        <ul className="right hide-on-med-and-down">
-          <li>
-            <Link to='/recipes'>Ideas</Link>
-          </li>
-          <li>
-            <Link to='/my-recipes'>My Recipes</Link>
-          </li>
-          <li>
-            <Link to='/use-up-leftovers'>Use Up Leftovers</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <ul className="sidenav" id="mobile-demo">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">Javascript</a></li>
-      <li><a href="mobile.html">Mobile</a></li>
-    </ul>
-  </header> 
-);
+export default class Header extends Component {
+  state = { activeItem: 'logo' }
 
-export default Header;
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+  render() {
+    const { activeItem } = this.state
+
+    return (
+      <Menu inverted color={'teal'}>
+        <Menu.Item as={Link} name='logo' to='/' onClick={this.handleItemClick} />
+        <Menu.Item
+          as={Link}
+          to='/recipes'
+          name='ideas'
+          active={activeItem === 'ideas'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          as={Link}
+          to='/my-recipes'
+          name='my recipes'
+          active={activeItem === 'my recipes'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          as={Link}
+          to='/use-up-leftovers'
+          name='use up leftovers'
+          active={activeItem === 'use up leftovers'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Menu position='right'>
+          <Menu.Item>
+            <Input icon='search' placeholder='Search...' />
+          </Menu.Item>
+          <Menu.Item
+            name='logout'
+            active={activeItem === 'logout'}
+            onClick={this.handleItemClick}
+          />
+        </Menu.Menu>
+      </Menu>
+    )
+  }
+}
