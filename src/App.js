@@ -9,6 +9,7 @@ import Home from './components/home/Home';
 import Recipes from './components/recipes/Recipes';
 import RecipeByUser from './components/recipes/recipeByUser/RecipeByUser';
 import RecipeLeftovers from './components/recipes/recipeLeftovers/RecipeLeftovers';
+import Register from './components/register/Register';
 import Profile from './components/profile/Profile';
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
               <Route exact path='/recipes' component={Recipes} />
               <Route exact path='/my-recipes' component={RecipeByUser} />
               <Route exact path='/use-up-leftovers' component={RecipeLeftovers} />
+              <Route exact path='/sign-up' component={Register} />
               <Route exact path="/profile" component={Profile} />
             </Container>
           </div>

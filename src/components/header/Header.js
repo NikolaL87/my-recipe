@@ -39,7 +39,16 @@ export default class Header extends Component {
             <Input icon='search' placeholder='Search...' />
           </Menu.Item>
           <Menu.Item
+            name='sign up'
+            as={Link}
+            to='/sign-up'
+            active={activeItem === 'sign up'}
+            onClick={this.handleItemClick}
+          />
+          <Menu.Item
             name='logout'
+            as={Link}
+            to='/'
             active={activeItem === 'logout'}
             onClick={this.handleItemClick}
           />
