@@ -8,6 +8,7 @@ class RecipeItems extends Component {
 		return (
 			<div className="row">
 				<div className="items">
+					<h2>Recipes by Category</h2>
 					{recipes.map((item, index) => {
 						return (
 							<div key={index}>
@@ -15,6 +16,7 @@ class RecipeItems extends Component {
 							</div>
 						);
 					})}
+					<h2>Recipes by Course</h2>
 				</div>
 			</div>
 		);

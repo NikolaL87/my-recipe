@@ -1,4 +1,13 @@
-import { GET_RECIPES, GET_RECIPE_BY_ID } from './types';
+import {
+	GET_RECIPES,
+	GET_RECIPE_BY_ID,
+	GET_RECIPES_BY_CATEGORY,
+	GET_RECIPE_BY_CATEGORY_ID,
+	GET_RECIPES_BY_COURSE,
+	GET_RECIPE_BY_COURSE_ID,
+	GET_MY_RECIPES,
+	POST_MY_RECIPE_ID
+} from './types';
 
 const recipes = [
 	{
@@ -59,6 +68,16 @@ const recipes = [
 	}
 ];
 
+// const recipesByCategory = [
+// 	{
+// 		category: ''
+// 	}
+// ]
+
+// const recipesByCourse = [
+
+// ]
+
 export const getRecipes = () => {
 	return {
 		type: GET_RECIPES,
@@ -71,5 +90,47 @@ export const getRecipeById = recipeId => {
 	return {
 		type: GET_RECIPE_BY_ID,
 		recipe
+	};
+};
+
+export const getRecipesByCategory = recipesByCategory => {
+	return {
+		type: GET_RECIPES_BY_CATEGORY,
+		recipesByCategory
+	};
+};
+
+export const getRecipeByCategoryId = recipeByCategoryId => {
+	return {
+		type: GET_RECIPE_BY_CATEGORY_ID,
+		recipeByCategoryId
+	};
+};
+
+export const getRecipesByCourse = recipesByCourse => {
+	return {
+		type: GET_RECIPES_BY_COURSE,
+		recipesByCourse
+	};
+};
+
+export const getRecipeByCourseId = recipeByCourseId => {
+	return {
+		type: GET_RECIPE_BY_COURSE_ID,
+		recipeByCourseId
+	};
+};
+
+export const getMyRecipes = myRecipes => {
+	return {
+		type: GET_MY_RECIPES,
+		myRecipes
+	};
+};
+
+export const postMyRecipe = myRecipe => {
+	return {
+		type: POST_MY_RECIPE_ID,
+		myRecipe
 	};
 };
