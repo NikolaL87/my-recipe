@@ -1,7 +1,11 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 
 import errorReducer from './errorReducer';
+import { recipesReducer } from './recipesReducer';
+import { selectedRecipeReducer } from './recipesReducer';
 
 export default combineReducers({
-  errors: errorReducer
-})
+	errors: errorReducer,
+	recipes: recipesReducer,
+	recipe: selectedRecipeReducer
+});
