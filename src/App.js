@@ -5,7 +5,7 @@ import store from './store';
 import { Container } from 'semantic-ui-react';
 
 import Header from './components/header/Header';
-import Home from './components/home/Home';
+import Banner from './components/banner/Banner';
 import Register from './components/register/Register';
 import Login from './components/login/Login';
 import Recipes from './components/recipes/recipe/Recipe';
@@ -21,8 +21,8 @@ class App extends Component {
 				<Router>
 					<div className="App">
 						<Header />
+						<Route exact path="/" component={Banner} />
 						<Container fluid>
-							<Route exact path="/" component={Home} />
 							<Route exact path="/recipes" component={Recipes} />
 							<Route exact path="/recipes/:id" component={RecipeDetail} />
 							<Route exact path="/my-recipes" component={RecipeByUser} />
