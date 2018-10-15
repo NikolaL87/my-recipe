@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RecipeItem from './RecipeItem';
 import { connect } from 'react-redux';
+import { Grid } from 'semantic-ui-react'
 
 class RecipeItems extends Component {
 	render() {
@@ -9,13 +10,17 @@ class RecipeItems extends Component {
 			<div className="row">
 				<div className="items">
 					<h2>Recipes by Category</h2>
-					{recipes.map((item, index) => {
-						return (
-							<div key={index}>
-								<RecipeItem item={item} />
-							</div>
-						);
-					})}
+          <Grid columns='equal'>
+            <Grid.Row>
+              {recipes.map((item, index) => {
+                return (
+                  <Grid.Column key={index}>
+                    <RecipeItem item={item} />
+                  </Grid.Column>
+                );
+              })}
+            </Grid.Row>
+          </Grid>
 					<h2>Recipes by Course</h2>
 				</div>
 			</div>

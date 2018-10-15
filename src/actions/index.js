@@ -12,9 +12,9 @@ import {
 const recipes = [
 	{
 		id: '1',
-		recipeCategory: 'vegan',
-		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg',
-		recipeTitle: 'Title 1',
+		recipeCategory: 'chicken',
+		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg',
+		recipeTitle: 'Spicy Baked Chicken Wings',
 		recipeDetail: [
 			{
 				detail: 'detail 1'
@@ -63,6 +63,34 @@ const recipes = [
 			},
 			{
 				detail: 'detail 8'
+			}
+		]
+  },
+  {
+		id: '5',
+		recipeCategory: 'Test 5',
+		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg',
+		recipeTitle: 'Title 5',
+		recipeDetail: [
+			{
+				detail: 'detail 9'
+			},
+			{
+				detail: 'detail 10'
+			}
+		]
+  },
+  {
+		id: '6',
+		recipeCategory: 'Test 6',
+		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg',
+		recipeTitle: 'Title 6',
+		recipeDetail: [
+			{
+				detail: 'detail 11'
+			},
+			{
+				detail: 'detail 12'
 			}
 		]
 	}
