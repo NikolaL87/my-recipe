@@ -8,5 +8,15 @@
 	min-height: 500px;
 }
 .container {
-  padding: 20px;
+	padding: 20px;
+}
+.ui.input {
+	display: block;
+}
+.field-wrap + .field-wrap {
+	margin-top: 10px;
+}
+.ui.input > input {
+	width: 100%;
+	display: block;
 }
