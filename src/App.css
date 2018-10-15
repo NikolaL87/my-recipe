@@ -1,9 +1,22 @@
 .home-section {
-  position: relative;
-  background: url('./img/showcase.jpg') no-repeat;
-  background-size: cover;
-  background-position: center;
-  margin-top: -14px;
-  margin-bottom: -50px;
-  min-height: 500px;
+	position: relative;
+	background: url('./img/bkg-3.jpg') no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin-top: -14px;
+	margin-bottom: -50px;
+	min-height: 500px;
+}
+.container {
+	padding: 20px;
+}
+.ui.input {
+	display: block;
+}
+.field-wrap + .field-wrap {
+	margin-top: 10px;
+}
+.ui.input > input {
+	width: 100%;
+	display: block;
 }

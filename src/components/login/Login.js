@@ -1,9 +1,9 @@
 import React from 'react';
 import { Grid, Image } from 'semantic-ui-react';
-import RegisterForm from './RegisterForm';
-import RegisterBackground from 'img/register-image.jpg';
+import LoginForm from './LoginForm';
+import LoginBackground from 'img/login-image.jpg';
 
-class Register extends React.Component {
+class Login extends React.Component {
 	handleSubmit = values => {
 		// print the form values to the console
 		console.log(values);
@@ -14,11 +14,11 @@ class Register extends React.Component {
 				<Grid columns={2}>
 					<Grid.Row>
 						<Grid.Column>
-							<h2>Register</h2>
-							<RegisterForm onSubmit={this.handleSubmit} />
+							<h2>Login</h2>
+							<LoginForm onSubmit={this.handleSubmit} />
 						</Grid.Column>
 						<Grid.Column>
-							<Image src={RegisterBackground} />
+							<Image src={LoginBackground} />
 						</Grid.Column>
 					</Grid.Row>
 				</Grid>
@@ -27,4 +27,4 @@ class Register extends React.Component {
 	}
 }
 
-export default Register;
+export default Login;
