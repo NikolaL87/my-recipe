@@ -1,0 +1,100 @@
+{
+  "recipes": [
+  {
+    "id": "1",
+    "category": "vegan",
+    "image": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg",
+    "title": "Recipes category title",
+      "recipe": [
+        {
+          "recipeId": "1",
+          "recipeImage": "Recipe Image",
+          "recipeTitle": "Recipe title",
+            "recipeDetail": [
+              {
+                "recipeDetailImage": "Recipe Detail Image",
+                "redipeDetailDescription": "Recipe Detail description",
+                "recipeIngredients": [
+                  {
+                    "ingredient": "ingredient 1"
+                  },
+                  {
+                    "ingredient": "ingredient 2"
+                  },
+                  {
+                    "ingredient": "ingredient 3"
+                  }
+                ],
+                "recipeInstructions": "This is recipe instructions",
+                "recipeNotes": "This is recipe notes"
+              }
+            ]
+        }
+      ]
+  },
+  {
+    "id": "2",
+    "category": "salad",
+    "image": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg",
+    "title": "Recipes category title",
+      "recipe": [
+        {
+          "recipeId": "1",
+          "recipeImage": "Recipe Image",
+          "recipeTitle": "Recipe title",
+            "recipeDetail": [
+              {
+                "recipeDetailImage": "Recipe Detail Image",
+                "redipeDetailDescription": "Recipe Detail description",
+                "recipeIngredients": [
+                  {
+                    "ingredient": "ingredient 1"
+                  },
+                  {
+                    "ingredient": "ingredient 2"
+                  },
+                  {
+                    "ingredient": "ingredient 3"
+                  }
+                ],
+                "recipeInstructions": "This is recipe instructions",
+                "recipeNotes": "This is recipe notes"
+              }
+            ]
+        }
+      ]
+  },
+  {
+    "id": "3",
+    "category": "cookies",
+    "image": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg",
+    "title": "Recipes category title",
+      "recipe": [
+        {
+          "recipeId": "1",
+          "recipeImage": "Recipe Image",
+          "recipeTitle": "Recipe title",
+            "recipeDetail": [
+              {
+                "recipeDetailImage": "Recipe Detail Image",
+                "redipeDetailDescription": "Recipe Detail description",
+                "recipeIngredients": [
+                  {
+                    "ingredient": "ingredient 1"
+                  },
+                  {
+                    "ingredient": "ingredient 2"
+                  },
+                  {
+                    "ingredient": "ingredient 3"
+                  }
+                ],
+                "recipeInstructions": "This is recipe instructions",
+                "recipeNotes": "This is recipe notes"
+              }
+            ]
+        }
+      ]
+  }
+]
+}

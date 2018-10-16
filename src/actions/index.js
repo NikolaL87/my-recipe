@@ -8,117 +8,124 @@ import {
 	GET_MY_RECIPES,
 	POST_MY_RECIPE_ID
 } from './types';
+import axios from 'axios';
 
-const recipes = [
-	{
-		id: '1',
-		recipeCategory: 'chicken',
-		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg',
-		recipeTitle: 'Spicy Baked Chicken Wings',
-		recipeDetail: [
-			{
-				detail: 'detail 1'
-			},
-			{
-				detail: 'detail 2'
-			}
-		]
-	},
-	{
-		id: '2',
-		recipeCategory: 'glutten free',
-		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg',
-		recipeTitle: 'Title 2',
-		recipeDetail: [
-			{
-				detail: 'detail 3'
-			},
-			{
-				detail: 'detail 4'
-			}
-		]
-	},
-	{
-		id: '3',
-		recipeCategory: 'Hot and spicy',
-		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg',
-		recipeTitle: 'Title 3',
-		recipeDetail: [
-			{
-				detail: 'detail 5'
-			},
-			{
-				detail: 'detail 6'
-			}
-		]
-	},
-	{
-		id: '4',
-		recipeCategory: 'Pasta',
-		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg',
-		recipeTitle: 'Title 4',
-		recipeDetail: [
-			{
-				detail: 'detail 7'
-			},
-			{
-				detail: 'detail 8'
-			}
-		]
-  },
-  {
-		id: '5',
-		recipeCategory: 'Test 5',
-		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg',
-		recipeTitle: 'Title 5',
-		recipeDetail: [
-			{
-				detail: 'detail 9'
-			},
-			{
-				detail: 'detail 10'
-			}
-		]
-  },
-  {
-		id: '6',
-		recipeCategory: 'Test 6',
-		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg',
-		recipeTitle: 'Title 6',
-		recipeDetail: [
-			{
-				detail: 'detail 11'
-			},
-			{
-				detail: 'detail 12'
-			}
-		]
-	}
-];
-
-// const recipesByCategory = [
+// const recipes = [
 // 	{
-// 		category: ''
+// 		id: '1',
+// 		recipeCategory: 'chicken',
+// 		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg',
+// 		recipeTitle: 'Spicy Baked Chicken Wings',
+// 		recipeDetail: [
+// 			{
+// 				detail: 'detail 1'
+// 			},
+// 			{
+// 				detail: 'detail 2'
+// 			}
+// 		]
+// 	},
+// 	{
+// 		id: '2',
+// 		recipeCategory: 'glutten free',
+// 		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg',
+// 		recipeTitle: 'Title 2',
+// 		recipeDetail: [
+// 			{
+// 				detail: 'detail 3'
+// 			},
+// 			{
+// 				detail: 'detail 4'
+// 			}
+// 		]
+// 	},
+// 	{
+// 		id: '3',
+// 		recipeCategory: 'Hot and spicy',
+// 		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg',
+// 		recipeTitle: 'Title 3',
+// 		recipeDetail: [
+// 			{
+// 				detail: 'detail 5'
+// 			},
+// 			{
+// 				detail: 'detail 6'
+// 			}
+// 		]
+// 	},
+// 	{
+// 		id: '4',
+// 		recipeCategory: 'Pasta',
+// 		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg',
+// 		recipeTitle: 'Title 4',
+// 		recipeDetail: [
+// 			{
+// 				detail: 'detail 7'
+// 			},
+// 			{
+// 				detail: 'detail 8'
+// 			}
+// 		]
+//   },
+//   {
+// 		id: '5',
+// 		recipeCategory: 'Test 5',
+// 		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg',
+// 		recipeTitle: 'Title 5',
+// 		recipeDetail: [
+// 			{
+// 				detail: 'detail 9'
+// 			},
+// 			{
+// 				detail: 'detail 10'
+// 			}
+// 		]
+//   },
+//   {
+// 		id: '6',
+// 		recipeCategory: 'Test 6',
+// 		recipeImage: 'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg',
+// 		recipeTitle: 'Title 6',
+// 		recipeDetail: [
+// 			{
+// 				detail: 'detail 11'
+// 			},
+// 			{
+// 				detail: 'detail 12'
+// 			}
+// 		]
 // 	}
-// ]
+// ];
 
-// const recipesByCourse = [
 
-// ]
-
-export const getRecipes = () => {
+const getRecipesSuccess = (recipes) => {
 	return {
 		type: GET_RECIPES,
 		recipes
 	};
 };
 
-export const getRecipeById = recipeId => {
-	const recipe = recipes.find(recipe => recipe.id === recipeId);
+export const getRecipes = (recipes) => dispatch => {
+  axios.get('http://localhost:3000/recipes', recipes)
+    .then(res => res.data)
+    .then(recipes => dispatch(getRecipesSuccess(recipes)))
+    .catch(err => console.log(err))
+};
+
+
+const getRecipeByIdSuccess = (recipe) => {
 	return {
 		type: GET_RECIPE_BY_ID,
 		recipe
 	};
+};
+
+export const getRecipeById = (recipeId) => dispatch => {
+  axios.get(`http://localhost:3000/recipes/${recipeId}`)
+    .then(res => res.data)
+    .then(recipe => dispatch(getRecipeByIdSuccess(recipe)))
+ 
+
 };
 
 export const getRecipesByCategory = recipesByCategory => {

@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const RecipeItem = ({ item }) => (
 	<Card as={Link} to={`/recipes/${item.id}`}>
-		<Image src={item.recipeImage} />
+		<Image src={item.image} />
 		<Card.Content>
-			<Card.Header>{item.recipeTitle}</Card.Header>
+			<Card.Header>{item.title}</Card.Header>
 			<Card.Meta>
-				<span className="date">{item.recipeCategory}</span>
+				<span className="date">{item.category}</span>
 			</Card.Meta>
 		</Card.Content>
 	</Card>
