@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import RecipeItem from './RecipeItem';
 import { connect } from 'react-redux';
-import { Grid } from 'semantic-ui-react'
+import { Grid, Container } from 'semantic-ui-react'
 
 class RecipeItems extends Component {
 	render() {
-		const { recipes } = this.props;
+    const { recipes } = this.props;
 		return (
-			<div className="row">
-				<div className="items">
-					<h2>Recipes by Category</h2>
-          <Grid columns='equal'>
+			<Container>
+        <h2>Recipes by Category</h2>
+          <Grid>
             <Grid.Row>
               {recipes.map((item, index) => {
+                console.log(item)
                 return (
-                  <Grid.Column key={index}>
+                  <Grid.Column width={4} key={index}>
                     <RecipeItem item={item} />
                   </Grid.Column>
                 );
@@ -22,8 +22,7 @@ class RecipeItems extends Component {
             </Grid.Row>
           </Grid>
 					<h2>Recipes by Course</h2>
-				</div>
-			</div>
+      </Container>
 		);
 	}
 }

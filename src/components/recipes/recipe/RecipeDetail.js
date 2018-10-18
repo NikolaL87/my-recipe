@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Item, Tab, Image, Form, TextArea, Divider } from 'semantic-ui-react'
+import { Button, Item, Tab, Image, Form, TextArea, Divider, Container } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 import * as actions from '../../../actions';
 
@@ -54,7 +54,7 @@ class RecipeDetail extends Component {
 	render() {
 		const { recipe } = this.props;
 		return (
-      <React.Fragment>
+      <Container>
         <Item.Group relaxed>
           <Item>
             <Item.Image size='middle' src={recipe.recipeImage} />
@@ -73,7 +73,7 @@ class RecipeDetail extends Component {
           </Item>
         </Item.Group>
         <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
-      </React.Fragment>
+      </Container>
 		);
 	}
 }

@@ -3,12 +3,10 @@
 	background: url('./img/bkg-3.jpg') no-repeat;
 	background-size: cover;
 	background-position: center;
-	margin-top: -14px;
+	margin-top: -30px;
 	margin-bottom: -50px;
-	min-height: 500px;
-}
-.container {
-	padding: 20px;
+  min-height: 500px;
+  display: grid;
 }
 .ui.input {
 	display: block;
@@ -19,4 +17,27 @@
 .ui.input > input {
 	width: 100%;
 	display: block;
+}
+.ui.menu {
+  margin-bottom: 30px;
+}
+.four.wide.column {
+  padding-bottom: 2rem;
+}
+.vertical-centered {
+  margin: auto;
+}
+.text-white {
+  color: #ffffff;
+}
+.text-center {
+  text-align: center;
+}
+.fz-25 {
+  font-size: 25px;
+}
+.fz-50 {
+  font-size: 50px;
+  line-height: 50px;
+  margin: 0;
 }

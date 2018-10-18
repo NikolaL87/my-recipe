@@ -3,8 +3,11 @@ import RecipeSearchInput from '../recipes/RecipeSearchInput';
 
 const Banner = () => (
 	<div className="home-section background">
-		<h2>Search or create your meal</h2>
-		<RecipeSearchInput />
+      <div className='vertical-centered'>
+        <h1 className='text-white fz-50'>Search your favourite meal</h1>
+        <p className='text-white text-center fz-25'>Cooking is amazing</p>
+        <RecipeSearchInput />
+      </div>
 	</div>
 );
 
