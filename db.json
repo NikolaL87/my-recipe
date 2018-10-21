@@ -1,100 +1,162 @@
 {
-  "recipes": [
-  {
-    "id": "1",
-    "category": "vegan",
-    "image": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg",
-    "title": "Recipes category title",
-      "recipe": [
-        {
-          "recipeId": "1",
-          "recipeImage": "Recipe Image",
-          "recipeTitle": "Recipe title",
-            "recipeDetail": [
-              {
-                "recipeDetailImage": "Recipe Detail Image",
-                "redipeDetailDescription": "Recipe Detail description",
-                "recipeIngredients": [
-                  {
-                    "ingredient": "ingredient 1"
-                  },
-                  {
-                    "ingredient": "ingredient 2"
-                  },
-                  {
-                    "ingredient": "ingredient 3"
-                  }
-                ],
-                "recipeInstructions": "This is recipe instructions",
-                "recipeNotes": "This is recipe notes"
-              }
-            ]
-        }
-      ]
-  },
-  {
-    "id": "2",
-    "category": "salad",
-    "image": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg",
-    "title": "Recipes category title",
-      "recipe": [
-        {
-          "recipeId": "1",
-          "recipeImage": "Recipe Image",
-          "recipeTitle": "Recipe title",
-            "recipeDetail": [
-              {
-                "recipeDetailImage": "Recipe Detail Image",
-                "redipeDetailDescription": "Recipe Detail description",
-                "recipeIngredients": [
-                  {
-                    "ingredient": "ingredient 1"
-                  },
-                  {
-                    "ingredient": "ingredient 2"
-                  },
-                  {
-                    "ingredient": "ingredient 3"
-                  }
-                ],
-                "recipeInstructions": "This is recipe instructions",
-                "recipeNotes": "This is recipe notes"
-              }
-            ]
-        }
-      ]
-  },
-  {
-    "id": "3",
-    "category": "cookies",
-    "image": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/antipastozoodlesalad-29c556.jpg",
-    "title": "Recipes category title",
-      "recipe": [
-        {
-          "recipeId": "1",
-          "recipeImage": "Recipe Image",
-          "recipeTitle": "Recipe title",
-            "recipeDetail": [
-              {
-                "recipeDetailImage": "Recipe Detail Image",
-                "redipeDetailDescription": "Recipe Detail description",
-                "recipeIngredients": [
-                  {
-                    "ingredient": "ingredient 1"
-                  },
-                  {
-                    "ingredient": "ingredient 2"
-                  },
-                  {
-                    "ingredient": "ingredient 3"
-                  }
-                ],
-                "recipeInstructions": "This is recipe instructions",
-                "recipeNotes": "This is recipe notes"
-              }
-            ]
-        }
-      ]
-  }
-]
+	"recipes": [
+		{
+			"id": "1",
+			"category": "appetizers",
+			"image": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/fiestacornavocadosalsa-bb22b9.jpg",
+			"title": "Appetizers"
+		},
+		{
+			"id": "2",
+			"category": "drinks",
+			"image": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/southern-sweet-tea.jpg",
+			"title": "Drinks"
+		},
+		{
+			"id": "3",
+			"category": "desserts",
+			"image": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/mini-fruit-tarts-filled-with-a-lemo.jpg",
+			"title": "Desserts"
+		},
+		{
+			"id": "4",
+			"category": "bread",
+			"image": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/raisin-cinnamon-bread-maker-bread-9.jpg",
+			"title": "Bread"
+		},
+		{
+			"id": "5",
+			"category": "salad",
+			"image": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/marinated-vegetable-salad.jpg",
+			"title": "Salad"
+		}
+	],
+
+	"recipe": [
+		{
+			"id": "1",
+			"category": "appetizers",
+			"recipeImage": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/party-loaf-4.jpg",
+			"recipeTitle": "Party Loaf",
+			"recipeDetail": [
+				{
+					"recipeDetailImage": "https://photos.bigoven.com/recipe/hero/party-loaf-4.jpg?h=500&w=500",
+					"redipeDetailDescription": "Try this Party Loaf recipe, or contribute your own.",
+					"recipeIngredients": [
+						{
+							"ingredient": "1 Loaf Rhodes Bread Dough ; thawed but still cold"
+						},
+						{
+							"ingredient": "Cheese ; Sliced, Any kind"
+						},
+						{
+							"ingredient": "2 package Bacon ; cooked"
+						}
+					],
+					"recipeInstructions": "Thaw out one loaf of Rhodes frozen bread dough. (I used a white bread loaf, although Rhodes has a 100% whole wheat available.) Place loaf into a zippered gallon sized plastic bag and set out on counter to thaw. You can also place in the refrigerator to thaw overnight. Your dough should be thawed but still cold to the touch. Roll loaf into a 20-22-inch rope. Spray bundt pan with non-stick cooking spray. Form dough into a circle and place in the bottom of a sprayed bundt pan. Cover with plastic wrap and let rise until double in size.",
+					"recipeNotes": "This is recipe Party Loaf notes"
+				}
+			]
+		},
+		{
+			"id": "2",
+			"category": "appetizers",
+			"recipeImage": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/baked-garlic.jpg",
+			"recipeTitle": "Baked Garlic",
+			"recipeDetail": [
+				{
+					"recipeDetailImage": "Recipe Detail Image",
+					"redipeDetailDescription": "Recipe Detail description",
+					"recipeIngredients": [
+						{
+							"ingredient": "ingredient 1"
+						},
+						{
+							"ingredient": "ingredient 2"
+						},
+						{
+							"ingredient": "ingredient 3"
+						}
+					],
+					"recipeInstructions": "This is recipe instructions",
+					"recipeNotes": "This is recipe notes"
+				}
+			]
+		},
+		{
+			"id": "3",
+			"category": "appetizers",
+			"recipeImage": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/untitled-recipe-3469.jpg",
+			"recipeTitle": "Antipasto Platter",
+			"recipeDetail": [
+				{
+					"recipeDetailImage": "https://photos.bigoven.com/recipe/hero/baked-garlic.jpg?h=500&w=500",
+					"redipeDetailDescription": "Try this Baked Garlic recipe, or contribute your own.",
+					"recipeIngredients": [
+						{
+							"ingredient": "2 whole garlic bulbs"
+						},
+						{
+							"ingredient": "2-3 tablespoons olive oil"
+						},
+						{
+							"ingredient": "1/2 teaspoon Fresh oregano, rosemary, basil, or dried herb ; chopped"
+						}
+					],
+					"recipeInstructions": "Soak domed lid in water for 10 minutes. Remove some of the papery outer skins from the garlic. Slice off the tops of the bulbs so each clove is exposed. Trim base so garlic heads will sit flat on base of baker. Drizzle olive oil over garlic bulbs. Sprinkle with oregano or other herbs; salt, and pepper. Cover with domed lid and place in cold oven. Set temperature at 325 degrees F and bake for 45 minutes or until garlic is tender and husks are golden brown. Baste occasionally with olive oil, if desired. Press with fork and spread on hot, crusty French bread. Dip in olive oil seasoned with Italian spices. Each clove can also be pressed out and served as a condiment. Add baked garlic to pasta sauces, salads, or pizza toppings.",
+					"recipeNotes": "This is Antipasto Platter notes"
+				}
+			]
+		},
+		{
+			"id": "4",
+			"category": "bread",
+			"recipeImage": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/untitled-recipe-3469.jpg",
+			"recipeTitle": "Antipasto Platter",
+			"recipeDetail": [
+				{
+					"recipeDetailImage": "https://photos.bigoven.com/recipe/hero/baked-garlic.jpg?h=500&w=500",
+					"redipeDetailDescription": "Try this Baked Garlic recipe, or contribute your own.",
+					"recipeIngredients": [
+						{
+							"ingredient": "2 whole garlic bulbs"
+						},
+						{
+							"ingredient": "2-3 tablespoons olive oil"
+						},
+						{
+							"ingredient": "1/2 teaspoon Fresh oregano, rosemary, basil, or dried herb ; chopped"
+						}
+					],
+					"recipeInstructions": "Soak domed lid in water for 10 minutes. Remove some of the papery outer skins from the garlic. Slice off the tops of the bulbs so each clove is exposed. Trim base so garlic heads will sit flat on base of baker. Drizzle olive oil over garlic bulbs. Sprinkle with oregano or other herbs; salt, and pepper. Cover with domed lid and place in cold oven. Set temperature at 325 degrees F and bake for 45 minutes or until garlic is tender and husks are golden brown. Baste occasionally with olive oil, if desired. Press with fork and spread on hot, crusty French bread. Dip in olive oil seasoned with Italian spices. Each clove can also be pressed out and served as a condiment. Add baked garlic to pasta sauces, salads, or pizza toppings.",
+					"recipeNotes": "This is Antipasto Platter notes"
+				}
+			]
+		},
+		{
+			"id": "5",
+			"category": "drinks",
+			"recipeImage": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/untitled-recipe-3469.jpg",
+			"recipeTitle": "Antipasto Platter",
+			"recipeDetail": [
+				{
+					"recipeDetailImage": "https://photos.bigoven.com/recipe/hero/baked-garlic.jpg?h=500&w=500",
+					"redipeDetailDescription": "Try this Baked Garlic recipe, or contribute your own.",
+					"recipeIngredients": [
+						{
+							"ingredient": "2 whole garlic bulbs"
+						},
+						{
+							"ingredient": "2-3 tablespoons olive oil"
+						},
+						{
+							"ingredient": "1/2 teaspoon Fresh oregano, rosemary, basil, or dried herb ; chopped"
+						}
+					],
+					"recipeInstructions": "Soak domed lid in water for 10 minutes. Remove some of the papery outer skins from the garlic. Slice off the tops of the bulbs so each clove is exposed. Trim base so garlic heads will sit flat on base of baker. Drizzle olive oil over garlic bulbs. Sprinkle with oregano or other herbs; salt, and pepper. Cover with domed lid and place in cold oven. Set temperature at 325 degrees F and bake for 45 minutes or until garlic is tender and husks are golden brown. Baste occasionally with olive oil, if desired. Press with fork and spread on hot, crusty French bread. Dip in olive oil seasoned with Italian spices. Each clove can also be pressed out and served as a condiment. Add baked garlic to pasta sauces, salads, or pizza toppings.",
+					"recipeNotes": "This is Antipasto Platter notes"
+				}
+			]
+		}
+	]
 }

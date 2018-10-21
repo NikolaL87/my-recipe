@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import RecipeItems from './RecipeItems';
+import RecipeListItems from './RecipeListItems';
 import { connect } from 'react-redux';
-import * as actions from '../../../actions';
+import * as actions from '../../../../actions';
 
 class Recipe extends Component {
 	UNSAFE_componentWillMount() {
@@ -10,7 +10,7 @@ class Recipe extends Component {
 
 	render() {
 		const { recipes } = this.props;
-		return <RecipeItems recipes={recipes} />;
+		return <RecipeListItems recipes={recipes} />;
 	}
 }
 
