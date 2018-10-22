@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react';
+import { Grid, Image, Container } from 'semantic-ui-react';
 import RegisterForm from './RegisterForm';
 import RegisterBackground from 'img/register-image.jpg';
 
@@ -10,7 +10,7 @@ class Register extends React.Component {
 	};
 	render() {
 		return (
-			<React.Fragment>
+			<Container>
 				<Grid columns={2}>
 					<Grid.Row>
 						<Grid.Column>
@@ -22,7 +22,7 @@ class Register extends React.Component {
 						</Grid.Column>
 					</Grid.Row>
 				</Grid>
-			</React.Fragment>
+			</Container>
 		);
 	}
 }

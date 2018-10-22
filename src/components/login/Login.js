@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react';
+import { Grid, Image, Container } from 'semantic-ui-react';
 import LoginForm from './LoginForm';
 import LoginBackground from 'img/login-image.jpg';
 
@@ -10,7 +10,7 @@ class Login extends React.Component {
 	};
 	render() {
 		return (
-			<React.Fragment>
+			<Container>
 				<Grid columns={2}>
 					<Grid.Row>
 						<Grid.Column>
@@ -22,7 +22,7 @@ class Login extends React.Component {
 						</Grid.Column>
 					</Grid.Row>
 				</Grid>
-			</React.Fragment>
+			</Container>
 		);
 	}
 }

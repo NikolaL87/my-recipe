@@ -1,7 +1,10 @@
 import React from 'react';
+import {Container} from 'semantic-ui-react';
 
 const RecipeLeftovers = () => (
-  <div>Use Up Leftovers</div>
+  <Container>
+    <div>Use Up Leftovers</div>
+  </Container>
 )
 
 
