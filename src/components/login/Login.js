@@ -11,13 +11,13 @@ class Login extends React.Component {
 	render() {
 		return (
 			<Container>
-				<Grid columns={2}>
+				<Grid>
 					<Grid.Row>
-						<Grid.Column>
+						<Grid.Column mobile={16} tablet={8} computer={8}>
 							<h2>Login</h2>
 							<LoginForm onSubmit={this.handleSubmit} />
 						</Grid.Column>
-						<Grid.Column>
+						<Grid.Column mobile={16} tablet={8} computer={8}>
 							<Image src={LoginBackground} />
 						</Grid.Column>
 					</Grid.Row>

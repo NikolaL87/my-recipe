@@ -12,7 +12,7 @@ class RecipeListItems extends Component {
 					<Grid.Row>
 						{recipes.map((item, index) => {
 							return (
-								<Grid.Column width={4} key={index}>
+								<Grid.Column mobile={16} tablet={8} computer={4} key={index}>
 									<RecipeListItem item={item} />
 								</Grid.Column>
 							);

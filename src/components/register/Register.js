@@ -11,13 +11,13 @@ class Register extends React.Component {
 	render() {
 		return (
 			<Container>
-				<Grid columns={2}>
+				<Grid>
 					<Grid.Row>
-						<Grid.Column>
+						<Grid.Column mobile={16} tablet={8} computer={8}>
 							<h2>Register</h2>
 							<RegisterForm onSubmit={this.handleSubmit} />
 						</Grid.Column>
-						<Grid.Column>
+						<Grid.Column mobile={16} tablet={8} computer={8}>
 							<Image src={RegisterBackground} />
 						</Grid.Column>
 					</Grid.Row>
