@@ -3,90 +3,98 @@ import { Button, Item, Tab, Image, Form, TextArea, Divider, Container } from 'se
 import { connect } from 'react-redux';
 import * as actions from '../../../../actions';
 
-const panes = [
-	{
-		menuItem: 'Recipe',
-		render: () => (
-			<Tab.Pane attached={false}>
-				<h3>INGREDIENTS</h3>
-				<div>
-					<p>25 chicken wings</p>
-				</div>
-				<h4>BRINE:</h4>
-				<div>
-					<p>6 cups water ; (up to 8 cups)</p>
-					<p>3 tablespoons kosher salt ; (up to 4 tablespoons)</p>
-					<p>1 tablespoons onion powder</p>
-				</div>
-				<h4>MARINADE:</h4>
-				<div>
-					<p>1/2 cup cilantro ; loosely packed</p>
-					<p>4 tablespoons oil</p>
-					<p>3 cloves Garlic ; crushed</p>
-				</div>
-			</Tab.Pane>
-		)
-	},
-	{
-		menuItem: 'Photos',
-		render: () => (
-			<Tab.Pane attached={false}>
-				<Image.Group size="small">
-					<Image
-						src={
-							'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg'
-						}
-					/>
-					<Image
-						src={
-							'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-5.jpg'
-						}
-					/>
-					<Image
-						src={
-							'https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg'
-						}
-					/>
-				</Image.Group>
-			</Tab.Pane>
-		)
-	},
-	{
-		menuItem: 'Notes',
-		render: () => (
-			<Tab.Pane attached={false}>
-				<Form>
-					<TextArea placeholder="Tell us more" />
-					<Divider hidden />
-					<Button secondary>Add your note</Button>
-				</Form>
-			</Tab.Pane>
-		)
-	}
-];
-
 class RecipeCategoryListItemDetail extends Component {
+
 	UNSAFE_componentWillMount() {
 		const recipeId = this.props.match.params.id;
 
 		this.props.dispatch(actions.getRecipeById(recipeId));
 	}
 
+  firstTab() {
+    const {recipeSelected} = this.props;
+    return (  
+    <Tab.Pane attached={false}>
+    {recipeSelected.recipeDetail &&
+    recipeSelected.recipeDetail.map((detailItem, index) => {
+      return (
+        <React.Fragment key={index}>
+          <h3>INGREDIENTS</h3>
+          <div>
+            {detailItem.recipeIngredients.map(({ingredient}, index) =>{
+              return <p key={index}>{ingredient}</p>
+            })
+            } 
+          </div>
+        </React.Fragment>
+      )
+    })
+    } 
+    </Tab.Pane>
+    )
+  }
+  secondTab() {
+    const {recipeSelected} = this.props;
+    return (
+      <Image.Group size="small">
+        {recipeSelected.recipeDetail &&
+          recipeSelected.recipeDetail.map((detailItem, index) => {
+            return (
+              <div key={index}>
+                {detailItem.recipeDetailImage.map(({image}, index) =>{
+                  return <Image key={index} src={image} />
+                })}
+              </div>
+            )
+          })
+        }
+      </Image.Group>
+    )
+  }
+  thirdTab() {
+    return (
+      <Tab.Pane attached={false}>
+        <Form>
+          <TextArea placeholder="Tell us more" />
+          <Divider hidden />
+          <Button secondary>Add your note</Button>
+        </Form>
+      </Tab.Pane>
+    )
+  }
+
 	render() {
-		const { recipeSelected } = this.props;
+    const { recipeSelected } = this.props;
+    const panes = [
+      {
+        menuItem: 'Recipe',
+        render: () => (
+          this.firstTab()
+        )
+      },
+      {
+        menuItem: 'Photos',
+        render: () => (
+          this.secondTab()
+        )
+      },
+      {
+        menuItem: 'Notes',
+        render: () => (
+          this.thirdTab()
+        )
+      }
+    ];
+
 		return (
 			<Container>
-				<div>Test</div>
 				<Item.Group relaxed>
 					<Item>
-						<Item.Image size="middle" src={recipeSelected.recipeImage} />
-						<Item.Content verticalAlign="middle">
+						<Item.Image src={recipeSelected.recipeImage} />
+						<Item.Content>
 							<Item.Header>{recipeSelected.recipeTitle}</Item.Header>
 							<Item.Description>
-								{recipeSelected.recipeDetail &&
-									recipeSelected.recipeDetail.map((detailItem, index) => {
-										return <div key={index}>{detailItem.detail}</div>;
-									})}
+								
 							</Item.Description>
 							<Item.Extra>
 								<Button>Add more</Button>

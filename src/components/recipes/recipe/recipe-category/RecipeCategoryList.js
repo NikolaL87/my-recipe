@@ -2,21 +2,23 @@ import React, { Component } from 'react';
 import RecipeCategoryListItems from './RecipeCategoryListItems';
 import { connect } from 'react-redux';
 import * as actions from '../../../../actions';
+import {Loader} from '../../../loader/Loader';
 
 class RecipeCategoryList extends Component {
-	componentDidMount() {
+	UNSAFE_componentWillMount() {
 		this.props.dispatch(actions.getRecipe());
 	}
 
 	render() {
-		const { recipe } = this.props;
-		return <RecipeCategoryListItems recipe={recipe} />;
+    const recipe = this.props.recipe.data;
+    const {isFetching} = this.props.recipe;
+		return isFetching ? <Loader /> : <RecipeCategoryListItems recipe={recipe} />;
 	}
 }
 
 function mapStateToProps(state) {
 	return {
-		recipe: state.recipe.data
+		recipe: state.recipe
 	};
 }
 

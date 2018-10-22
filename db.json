@@ -40,7 +40,17 @@
 			"recipeTitle": "Party Loaf",
 			"recipeDetail": [
 				{
-					"recipeDetailImage": "https://photos.bigoven.com/recipe/hero/party-loaf-4.jpg?h=500&w=500",
+					"recipeDetailImage": [
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg"
+            },
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-5.jpg"
+            },
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg"
+            }
+          ],
 					"redipeDetailDescription": "Try this Party Loaf recipe, or contribute your own.",
 					"recipeIngredients": [
 						{
@@ -65,7 +75,17 @@
 			"recipeTitle": "Baked Garlic",
 			"recipeDetail": [
 				{
-					"recipeDetailImage": "Recipe Detail Image",
+					"recipeDetailImage": [
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg"
+            },
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-5.jpg"
+            },
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg"
+            }
+          ],
 					"redipeDetailDescription": "Recipe Detail description",
 					"recipeIngredients": [
 						{
@@ -90,7 +110,17 @@
 			"recipeTitle": "Antipasto Platter",
 			"recipeDetail": [
 				{
-					"recipeDetailImage": "https://photos.bigoven.com/recipe/hero/baked-garlic.jpg?h=500&w=500",
+					"recipeDetailImage": [
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg"
+            },
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-5.jpg"
+            },
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg"
+            }
+          ],
 					"redipeDetailDescription": "Try this Baked Garlic recipe, or contribute your own.",
 					"recipeIngredients": [
 						{
@@ -111,50 +141,105 @@
 		{
 			"id": "4",
 			"category": "bread",
-			"recipeImage": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/untitled-recipe-3469.jpg",
-			"recipeTitle": "Antipasto Platter",
+			"recipeImage": "https://photos.bigoven.com/recipe/hero/best-ever-bagels-8.jpg?h=500&w=500",
+			"recipeTitle": "Best Ever Bagels",
 			"recipeDetail": [
 				{
-					"recipeDetailImage": "https://photos.bigoven.com/recipe/hero/baked-garlic.jpg?h=500&w=500",
-					"redipeDetailDescription": "Try this Baked Garlic recipe, or contribute your own.",
+					"recipeDetailImage": [
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg"
+            },
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-5.jpg"
+            },
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg"
+            }
+          ],
+					"redipeDetailDescription": "These terrific bagels come out chewy and pillowy-soft. Try these best-ever bagels!",
 					"recipeIngredients": [
 						{
-							"ingredient": "2 whole garlic bulbs"
+							"ingredient": "6 2/3 cups white bread flour ; (I like to use King Arthur)"
 						},
 						{
-							"ingredient": "2-3 tablespoons olive oil"
+							"ingredient": "1 tbsp salt"
 						},
 						{
-							"ingredient": "1/2 teaspoon Fresh oregano, rosemary, basil, or dried herb ; chopped"
+							"ingredient": "1 tbsp instant yeast"
 						}
 					],
-					"recipeInstructions": "Soak domed lid in water for 10 minutes. Remove some of the papery outer skins from the garlic. Slice off the tops of the bulbs so each clove is exposed. Trim base so garlic heads will sit flat on base of baker. Drizzle olive oil over garlic bulbs. Sprinkle with oregano or other herbs; salt, and pepper. Cover with domed lid and place in cold oven. Set temperature at 325 degrees F and bake for 45 minutes or until garlic is tender and husks are golden brown. Baste occasionally with olive oil, if desired. Press with fork and spread on hot, crusty French bread. Dip in olive oil seasoned with Italian spices. Each clove can also be pressed out and served as a condiment. Add baked garlic to pasta sauces, salads, or pizza toppings.",
-					"recipeNotes": "This is Antipasto Platter notes"
+					"recipeInstructions": "Combine flour, salt and yeast in a mixer bowl( I use my Kitchenaid stand mixer here to do the heavy work of kneading). Add sugar and oil to the water and pour over the dry ingredients. Knead well for about 5-6 minutes using the kneading attachment on you mixer. Form into a ball and put into an oiled bowl turning once to coat dough. Cover with plastic and let rise one hour or until doubled. ( I usually preheat my oven for a minute until it is nice and cozy:)... turn off the oven and let the dough rise in the oven free from drafts).",
+					"recipeNotes": "This is Best Ever Bagels notes"
 				}
 			]
 		},
 		{
 			"id": "5",
-			"category": "drinks",
-			"recipeImage": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/untitled-recipe-3469.jpg",
-			"recipeTitle": "Antipasto Platter",
+			"category": "bread",
+			"recipeImage": "https://photos.bigoven.com/recipe/hero/chilli-cheese-bagels-bread-maker.jpg?h=500&w=500",
+			"recipeTitle": "Chilli & Cheese Bagels (Bread Maker)",
 			"recipeDetail": [
 				{
-					"recipeDetailImage": "https://photos.bigoven.com/recipe/hero/baked-garlic.jpg?h=500&w=500",
-					"redipeDetailDescription": "Try this Baked Garlic recipe, or contribute your own.",
+					"recipeDetailImage": [
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg"
+            },
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-5.jpg"
+            },
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg"
+            }
+          ],
+					"redipeDetailDescription": "Chilli & Cheese bagels made by using a bread maker for the dough, and then boiling, followed by an oven bake",
 					"recipeIngredients": [
 						{
-							"ingredient": "2 whole garlic bulbs"
+							"ingredient": "265 ml warm water ; 45 degrees C"
 						},
 						{
-							"ingredient": "2-3 tablespoons olive oil"
+							"ingredient": "10 grams Salt"
 						},
 						{
-							"ingredient": "1/2 teaspoon Fresh oregano, rosemary, basil, or dried herb ; chopped"
+							"ingredient": "30 grams Sugar"
 						}
 					],
-					"recipeInstructions": "Soak domed lid in water for 10 minutes. Remove some of the papery outer skins from the garlic. Slice off the tops of the bulbs so each clove is exposed. Trim base so garlic heads will sit flat on base of baker. Drizzle olive oil over garlic bulbs. Sprinkle with oregano or other herbs; salt, and pepper. Cover with domed lid and place in cold oven. Set temperature at 325 degrees F and bake for 45 minutes or until garlic is tender and husks are golden brown. Baste occasionally with olive oil, if desired. Press with fork and spread on hot, crusty French bread. Dip in olive oil seasoned with Italian spices. Each clove can also be pressed out and served as a condiment. Add baked garlic to pasta sauces, salads, or pizza toppings.",
-					"recipeNotes": "This is Antipasto Platter notes"
+					"recipeInstructions": "Place 265 ml warm water, salt, sugar, flour, red chilli, chilli flakes, cheese and yeast in the bread machine pan in the order recommended by the manufacturer. Select Dough setting. When cycle is complete, let dough rest on a lightly floured (or oiled) surface. Meanwhile, in a large pot bring 3 litres of water to a boil. Stir in 40 grams of sugar. Cut dough into 10 equal pieces, and roll each piece into a small ball. Flatten balls. Poke a hole in the middle of each with your thumb. Twirl the dough on your finger or thumb to enlarge the hole, and to even out the dough around the hole. Cover bagels with a clean cloth, and let rest for 10 minutes.",
+					"recipeNotes": "Chilli & Cheese Bagels (Bread Maker)"
+				}
+			]
+    },
+    {
+			"id": "6",
+			"category": "bread",
+			"recipeImage": "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/bread-machine-whole-wheat-bagels.jpg",
+			"recipeTitle": "Bread Machine Whole Wheat Bagels",
+			"recipeDetail": [
+				{
+					"recipeDetailImage": [
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg"
+            },
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-5.jpg"
+            },
+            {
+              "image" : "https://bigoven-res.cloudinary.com/image/upload/t_recipe-256/spicy-baked-chicken-wings-00e568.jpg"
+            }
+          ],
+					"redipeDetailDescription": "Try this Bread Machine Whole Wheat Bagels recipe, or contribute your own.",
+					"recipeIngredients": [
+						{
+							"ingredient": "2 tb Gluten"
+						},
+						{
+							"ingredient": "2 c White bread flour"
+						},
+						{
+							"ingredient": "3 1/4 ts Active dry yeast"
+						}
+					],
+					"recipeInstructions": "1. Insert ingredients in bread machine according to manufacturers instructions. Remove the dough from the machine after the first knead - approximately 20 to 30 minutes. 2. Place dough on a floured surface. Divide into 8 parts. Form balls, gently press thumb through center of ball and slowly stretch into bagel shape. 3. While bagels rise, bring three quarts of water and one tablespoon of sugar to a rapid boil in a large saucepan. Drop test dough (see hints below). 4. Using a slotted spoon, drop 2-3 bagels into rapidly boiling water. Boil on each side for 1/2 minutes. Remove and cool on rack 1 minute, brush with egg and sprinkle with sesame or poppy seeds, if desired. 5. Bake at 400 on a baking sheet sprinkled with cornmeal, until golden - approximately 15 minutes. ** Bagel Success Hints ** When forming the bagels, set aside two 1/4' balls of dough. When the bagels have doubled in size, drop the test dough into boiling water. The dough should pop to the top right away. When this happens, it is time to boil the bagels. ** A quick spray of non-stick vegetable coating on the top of the bagel may be substituted for the egg wash. ** To make bagel sticks, cut bagel before rising and lay out in a straight line. Roll sticks in a combination of sesame and poppy seeds with a pinch of garlic powder. Let sticks rise, boil, and bake as described in the above directions. ** To make bagel chips, slice leftover bagels horizontally into thin slices. Bruish with butter or margarine on one side. Lay (butter side up) on an ungreased cookie sheet and bake at 325 for 12-15 minutes until golden brown and crisp. Recipe by: More Electric Bread Posted to MC-Recipe Digest V1 #1043 by 'jms@twave.net' on Jan 24, 1998",
+					"recipeNotes": "This is Bread Machine Whole Wheat Bagels notes"
 				}
 			]
 		}

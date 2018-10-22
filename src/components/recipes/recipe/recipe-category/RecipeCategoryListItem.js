@@ -6,7 +6,6 @@ import * as actions from '../../../../actions';
 
 class RecipeCategoryListItem extends Component {
 	UNSAFE_componentWillMount() {
-		this.props.dispatch(actions.getRecipes());
 		this.props.dispatch(actions.getRecipe());
 	}
 
@@ -44,7 +43,6 @@ class RecipeCategoryListItem extends Component {
 
 function mapStateToProps(state) {
 	return {
-		recipes: state.recipes.data,
 		recipe: state.recipe.data
 	};
 }
