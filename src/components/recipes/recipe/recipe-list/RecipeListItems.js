@@ -19,7 +19,6 @@ class RecipeListItems extends Component {
 						})}
 					</Grid.Row>
 				</Grid>
-				<h2>Recipes by Course</h2>
 			</Container>
 		);
 	}

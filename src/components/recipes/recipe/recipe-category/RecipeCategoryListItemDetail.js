@@ -26,6 +26,10 @@ class RecipeCategoryListItemDetail extends Component {
             })
             } 
           </div>
+          <h3>INSTRUCTIONS</h3>
+          <p>{detailItem.recipeInstructions}</p>
+          <h3>NOTES</h3>
+          <p>{detailItem.recipeNotes}</p>
         </React.Fragment>
       )
     })
@@ -94,11 +98,14 @@ class RecipeCategoryListItemDetail extends Component {
 						<Item.Content>
 							<Item.Header>{recipeSelected.recipeTitle}</Item.Header>
 							<Item.Description>
-								
+                {recipeSelected.recipeDetail &&
+                  recipeSelected.recipeDetail.map((detailItem, index) => {
+                    return (
+                      <div key={index}>{detailItem.redipeDetailDescription}</div>
+                    )
+                  })
+                }
 							</Item.Description>
-							<Item.Extra>
-								<Button>Add more</Button>
-							</Item.Extra>
 						</Item.Content>
 					</Item>
 				</Item.Group>

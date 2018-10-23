@@ -54,7 +54,6 @@ const getRecipeFail = errors => {
 };
 
 // RECIPE BY ID ACTION TYPES
-
 const getRecipeByIdInit = () => {
 	return {
 		type: GET_RECIPE_BY_ID_INIT

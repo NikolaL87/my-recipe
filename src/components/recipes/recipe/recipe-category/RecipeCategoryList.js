@@ -25,9 +25,11 @@ class RecipeCategoryList extends Component {
 	}
 
 	render() {
+    const { category } = this.props.match.params;
 		return (
 			<Container>
 				<Grid>
+          <h2>{category}</h2>
 					<Grid.Row>{this.getRecipeItem()}</Grid.Row>
 				</Grid>
 			</Container>
