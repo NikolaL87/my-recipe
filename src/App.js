@@ -13,6 +13,7 @@ import RecipeCategoryList from './components/recipes/recipe/recipe-category/Reci
 import RecipeCategoryListItemDetail from './components/recipes/recipe/recipe-category/RecipeCategoryListItemDetail';
 import RecipeCreateList from './components/recipes/recipe/recipe-create/RecipeCreateList';
 import RecipeCreate from './components/recipes/recipe/recipe-create/RecipeCreate';
+import RecipeCreateItemDetail from './components/recipes/recipe/recipe-create/RecipeCreateItemDetail';
 import RecipeLeftovers from './components/recipes/recipe/recipe-leftovers/RecipeLeftovers';
 import Profile from './components/profile/Profile';
 
@@ -30,7 +31,8 @@ class App extends Component {
 								<Route exact path="/recipe/:category" component={RecipeCategoryList} />
 								<Route exact path="/recipe/:category/:id" component={RecipeCategoryListItemDetail} />
 								<Route exact path="/my-recipes" component={RecipeCreateList} />
-                <Route exact path="/my-recipes/create" component={RecipeCreate} />
+								<Route exact path="/my-recipes/create" component={RecipeCreate} />
+								<Route exact path="/my-recipes/:id" component={RecipeCreateItemDetail} />
 								<Route exact path="/use-up-leftovers" component={RecipeLeftovers} />
 								<Route exact path="/register" component={Register} />
 								<Route exact path="/login" component={Login} />

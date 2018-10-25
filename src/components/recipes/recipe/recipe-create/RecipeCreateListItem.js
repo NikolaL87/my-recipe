@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const RecipeCreateListItem = ({ item }) => {
 	return (
 		<Grid.Column mobile={16} tablet={8} computer={4}>
-			<Card as={Link} to={`/recipe/${item.category}/${item.id}`}>
+			<Card as={Link} to={`/my-recipes/${item.id}`}>
 				<Image src={item.recipeImage} />
 				<Card.Content>
 					<Card.Header>{item.recipeTitle}</Card.Header>
