@@ -1,4 +1,5 @@
 {
 	"/api/*": "/$1",
-	"/recipe/:category/:id/show": "/:category/:id"
+	"/recipe/:category/:id/show": "/:category/:id",
+	"/my-recipes/:id/show": "/:id"
 }

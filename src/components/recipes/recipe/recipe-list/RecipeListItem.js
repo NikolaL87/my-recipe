@@ -10,9 +10,6 @@ class RecipeListItem extends Component {
 				<Image src={item.image} />
 				<Card.Content>
 					<Card.Header>{item.title}</Card.Header>
-					<Card.Meta>
-						<span className="date">{item.category}</span>
-					</Card.Meta>
 				</Card.Content>
 			</Card>
 		);

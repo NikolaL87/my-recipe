@@ -7,7 +7,13 @@ import {
 	GET_RECIPE_FAIL,
 	GET_RECIPE_BY_ID_INIT,
 	GET_RECIPE_BY_ID_SUCCESS,
-	GET_RECIPE_BY_ID_FAIL
+	GET_RECIPE_BY_ID_FAIL,
+	GET_MY_RECIPE_INIT,
+	GET_MY_RECIPE_SUCCESS,
+	GET_MY_RECIPE_FAIL,
+	GET_MY_RECIPE_BY_ID_INIT,
+	GET_MY_RECIPE_BY_ID_SUCCESS,
+	GET_MY_RECIPE_BY_ID_FAIL
 } from './types';
 import axios from 'axios';
 
@@ -54,7 +60,6 @@ const getRecipeFail = errors => {
 };
 
 // RECIPE BY ID ACTION TYPES
-
 const getRecipeByIdInit = () => {
 	return {
 		type: GET_RECIPE_BY_ID_INIT
@@ -75,6 +80,47 @@ const getRecipeByIdFail = errors => {
 	};
 };
 
+// MY RECIPE ACTIONS TYPES
+const getMyRecipeInit = () => {
+	return {
+		type: GET_MY_RECIPE_INIT
+	};
+};
+
+const getMyRecipeSuccess = myRecipe => {
+	return {
+		type: GET_MY_RECIPE_SUCCESS,
+		myRecipe
+	};
+};
+
+const getMyRecipeFail = errors => {
+	return {
+		type: GET_MY_RECIPE_FAIL,
+		errors
+	};
+};
+
+// MY RECIPE BY ID ACTIONS TYPES
+const getMyRecipeByIdInit = () => {
+	return {
+		type: GET_MY_RECIPE_BY_ID_INIT
+	};
+};
+
+const getMyRecipeByIdSuccess = myRecipeSelected => {
+	return {
+		type: GET_MY_RECIPE_BY_ID_SUCCESS,
+		myRecipeSelected
+	};
+};
+
+const getMyRecipeByIdFail = errors => {
+	return {
+		type: GET_MY_RECIPE_BY_ID_FAIL,
+		errors
+	};
+};
 export const getRecipes = () => dispatch => {
 	dispatch(getRecipesInit());
 	axios
@@ -100,4 +146,28 @@ export const getRecipeById = recipeSelected => dispatch => {
 		.then(res => res.data)
 		.then(recipe => dispatch(getRecipeByIdSuccess(recipe)))
 		.catch(({ response }) => dispatch(getRecipeByIdFail(response.data.errors)));
+};
+
+export const getMyRecipe = () => dispatch => {
+	dispatch(getMyRecipeInit());
+	axios
+		.get(`http://localhost:3000/my-recipes`)
+		.then(res => res.data)
+		.then(myRecipe => dispatch(getMyRecipeSuccess(myRecipe)))
+		.catch(({ response }) => dispatch(getMyRecipeFail(response.data.errors)));
+};
+
+export const getMyRecipeById = myRecipeSelected => dispatch => {
+	dispatch(getMyRecipeByIdInit());
+	axios
+		.get(`http://localhost:3000/my-recipes/${myRecipeSelected}`)
+		.then(res => res.data)
+		.then(recipe => dispatch(getMyRecipeByIdSuccess(recipe)))
+		.catch(({ response }) => dispatch(getMyRecipeByIdFail(response.data.errors)));
+};
+
+export const createMyRecipe = myRecipeData => {
+	return axios
+		.post(`http://localhost:3000/my-recipes`, myRecipeData)
+		.then(res => res.data, err => Promise.reject(err.response.data.errors));
 };

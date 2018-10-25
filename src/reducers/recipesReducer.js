@@ -7,7 +7,13 @@ import {
 	GET_RECIPE_FAIL,
 	GET_RECIPE_BY_ID_INIT,
 	GET_RECIPE_BY_ID_SUCCESS,
-	GET_RECIPE_BY_ID_FAIL
+	GET_RECIPE_BY_ID_FAIL,
+	GET_MY_RECIPE_INIT,
+	GET_MY_RECIPE_SUCCESS,
+	GET_MY_RECIPE_FAIL,
+	GET_MY_RECIPE_BY_ID_INIT,
+	GET_MY_RECIPE_BY_ID_SUCCESS,
+	GET_MY_RECIPE_BY_ID_FAIL
 } from '../actions/types';
 
 const initialState = {
@@ -21,7 +27,16 @@ const initialState = {
 		errors: [],
 		isFetching: false
 	},
+	myRecipe: {
+		data: [],
+		errors: [],
+		isFetching: false
+	},
 	recipeSelected: {
+		data: {},
+		errors: []
+	},
+	myRecipeSelected: {
 		data: {},
 		errors: []
 	}
@@ -60,6 +75,32 @@ export const recipeSelectedReducer = (state = initialState.recipeSelected, actio
 		case GET_RECIPE_BY_ID_SUCCESS:
 			return { ...state, data: action.recipeSelected, isFetching: false };
 		case GET_RECIPE_BY_ID_FAIL:
+			return { ...state, errors: [], data: [], isFetching: true };
+		default:
+			return state;
+	}
+};
+
+export const myRecipeReducer = (state = initialState.myRecipe, action) => {
+	switch (action.type) {
+		case GET_MY_RECIPE_INIT:
+			return { ...state, data: [], errors: [], isFetching: true };
+		case GET_MY_RECIPE_SUCCESS:
+			return { ...state, data: action.myRecipe, isFetching: false };
+		case GET_MY_RECIPE_FAIL:
+			return { ...state, errors: [], data: [], isFetching: true };
+		default:
+			return state;
+	}
+};
+
+export const myRecipeSelectedReducer = (state = initialState.myRecipeSelected, action) => {
+	switch (action.type) {
+		case GET_MY_RECIPE_BY_ID_INIT:
+			return { ...state, data: [], errors: [], isFetching: true };
+		case GET_MY_RECIPE_BY_ID_SUCCESS:
+			return { ...state, data: action.myRecipeSelected, isFetching: false };
+		case GET_MY_RECIPE_BY_ID_FAIL:
 			return { ...state, errors: [], data: [], isFetching: true };
 		default:
 			return state;
