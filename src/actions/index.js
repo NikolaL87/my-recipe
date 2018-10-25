@@ -7,7 +7,10 @@ import {
 	GET_RECIPE_FAIL,
 	GET_RECIPE_BY_ID_INIT,
 	GET_RECIPE_BY_ID_SUCCESS,
-	GET_RECIPE_BY_ID_FAIL
+  GET_RECIPE_BY_ID_FAIL,
+  GET_MY_RECIPE_INIT,
+  GET_MY_RECIPE_SUCCESS,
+  GET_MY_RECIPE_FAIL
 } from './types';
 import axios from 'axios';
 
@@ -74,6 +77,27 @@ const getRecipeByIdFail = errors => {
 	};
 };
 
+// MY RECIPE ACTIONS TYPES
+const getMyRecipeInit = () => {
+	return {
+		type: GET_MY_RECIPE_INIT
+	};
+};
+
+const getMyRecipeSuccess = myRecipe => {
+	return {
+		type: GET_MY_RECIPE_SUCCESS,
+		myRecipe
+	};
+};
+
+const getMyRecipeFail = errors => {
+	return {
+		type: GET_MY_RECIPE_FAIL,
+		errors
+	};
+};
+
 export const getRecipes = () => dispatch => {
 	dispatch(getRecipesInit());
 	axios
@@ -100,3 +124,19 @@ export const getRecipeById = recipeSelected => dispatch => {
 		.then(recipe => dispatch(getRecipeByIdSuccess(recipe)))
 		.catch(({ response }) => dispatch(getRecipeByIdFail(response.data.errors)));
 };
+
+export const getMyRecipe = () => dispatch => {
+	dispatch(getMyRecipeInit());
+	axios
+		.get(`http://localhost:3000/my-recipes`)
+		.then(res => res.data)
+		.then(myRecipe => dispatch(getMyRecipeSuccess(myRecipe)))
+		.catch(({ response }) => dispatch(getMyRecipeFail(response.data.errors)));
+};
+
+export const createMyRecipe = (myRecipeData) => {
+  return axios.post(`http://localhost:3000/my-recipes`, myRecipeData).then(
+    res => res.data,
+    err => Promise.reject(err.response.data.errors)
+  )
+}
