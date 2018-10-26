@@ -110,6 +110,7 @@ class RecipeCategoryListItemDetail extends Component {
 					</Item>
 				</Item.Group>
 				<Tab menu={{ secondary: true, pointing: true }} panes={panes} />
+        <Divider hidden />
 			</Container>
 		);
 	}

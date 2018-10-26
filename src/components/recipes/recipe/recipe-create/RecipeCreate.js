@@ -13,6 +13,8 @@ class RecipeCreate extends Component {
       redirect: false
     }
 
+    this.recipeCategories = ["", "appetizers", "bread", "breakfast", "desserts", "drinks", "salad"]
+
     this.recipeCreate = this.recipeCreate.bind(this);
   }
 
@@ -31,7 +33,10 @@ class RecipeCreate extends Component {
     }
     return (
       <Container>
-        <RecipeCreateForm submitCb={this.recipeCreate} />
+        <React.Fragment>
+          <h2>Create Your Own Recipe</h2>
+          <RecipeCreateForm options={this.recipeCategories} submitCb={this.recipeCreate} />
+        </React.Fragment>
       </Container>
     )
   }

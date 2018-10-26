@@ -10,7 +10,7 @@ const RecipeCreateListItem = ({ item }) => {
 				<Card.Content>
 					<Card.Header>{item.recipeTitle}</Card.Header>
 					<Card.Meta>
-						<span className="date">{item.category}</span>
+						<span className="date">{item.recipeCategory}</span>
 					</Card.Meta>
 				</Card.Content>
 			</Card>

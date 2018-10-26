@@ -3,7 +3,7 @@ import { Field } from 'redux-form';
 import { Input, Divider, Icon } from 'semantic-ui-react';
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
-	<div>
+	<div className="ingredient-field">
 		<label>{label}</label>
 		<div>
 			<Input {...input} type={type} placeholder={label} />
@@ -16,7 +16,7 @@ export const renderIngredients = ({ fields, meta: { error } }) => (
 	<ul className="ingredient-items list-unstyled">
 		<li className="ingredient-button">
 			<span className="ui teal button" onClick={() => fields.push()} color={'teal'}>
-				Add Ingredients
+				Add Ingredients +
 			</span>
 		</li>
 		<Divider hidden />

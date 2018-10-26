@@ -49,6 +49,12 @@ textarea {
   list-style: none;
   padding: 0;
 }
+.ingredient-field {
+  display: inline-block;
+  margin-right: 2%;
+  margin-bottom: 10px;
+  width: 22%;
+}
 .loader {
 	border: 16px solid #f3f3f3;
 	border-radius: 50%;

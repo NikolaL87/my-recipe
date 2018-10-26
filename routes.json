@@ -1,5 +1,6 @@
 {
 	"/api/*": "/$1",
 	"/recipe/:category/:id/show": "/:category/:id",
-	"/my-recipes/:id/show": "/:id"
+  "/my-recipes/:id/show": "/:id",
+  "/use-up-leftovers/:ingredients/recipe": "/:ingredients"
 }

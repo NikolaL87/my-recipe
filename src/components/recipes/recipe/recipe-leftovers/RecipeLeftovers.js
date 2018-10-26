@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Container } from 'semantic-ui-react';
+import RecipeLeftoversItem from './RecipeLeftoversItem';
 
-const RecipeLeftovers = () => (
-	<Container>
-		<div>Use Up Leftovers</div>
-	</Container>
-);
+class RecipeLeftovers extends Component {
+  render(){
+    return (
+      <Container>
+        <RecipeLeftoversItem />
+      </Container>
+    )
+  }
+}
 
 export default RecipeLeftovers;
