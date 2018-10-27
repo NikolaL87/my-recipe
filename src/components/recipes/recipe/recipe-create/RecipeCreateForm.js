@@ -4,8 +4,8 @@ import { Button, Divider } from 'semantic-ui-react';
 import { InputField } from '../../../shared/form/InputField';
 import { TextAreaField } from '../../../shared/form/TextAreaField';
 import { renderIngredients } from '../../../shared/form/ArrayFields';
-import {SelectField} from '../../../shared/form/SelectField';
-import {FileUploadField} from '../../../shared/form/FileUploadField';
+import { SelectField } from '../../../shared/form/SelectField';
+import { FileUploadField } from '../../../shared/form/FileUploadField';
 import { validate } from '../../../shared/form/Validators';
 
 let RecipeCreateForm = props => {
@@ -28,14 +28,14 @@ let RecipeCreateForm = props => {
 				type="text"
 				label={'Main Ingredient'}
 			/>
-      <Divider hidden />
-      <Field
-        options={options}
-        name="recipeCategory"
-        label='Category'
-        component={SelectField}
-        placeholder='Select category'
-      />
+			<Divider hidden />
+			<Field
+				options={options}
+				name="recipeCategory"
+				label="Category"
+				component={SelectField}
+				placeholder="Select category"
+			/>
 			<FieldArray name="ingredients" component={renderIngredients} />
 			<Field
 				name="recipePreparation"
@@ -51,12 +51,8 @@ let RecipeCreateForm = props => {
 				type="textarea"
 				label={'Write your notes'}
 			/>
-      <Divider hidden />
-      <Field
-        name="recipeImage"
-        label='Recipe Image'
-        component={FileUploadField}
-      />
+			<Divider hidden />
+			<Field name="recipeImage" label="Recipe Image" component={FileUploadField} />
 			<Divider hidden />
 			<Button type="submit" secondary disabled={submitting}>
 				Save your recipe
@@ -69,7 +65,7 @@ let RecipeCreateForm = props => {
 RecipeCreateForm = reduxForm({
 	// a unique name for the form
 	form: 'RecipeCreateForm',
-	validate,
+	validate
 })(RecipeCreateForm);
 
 export default RecipeCreateForm;

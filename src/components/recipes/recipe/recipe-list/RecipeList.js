@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import RecipeListItems from './RecipeListItems';
 import { connect } from 'react-redux';
 import * as actions from '../../../../actions';
-import {Loader} from '../../../loader/Loader';
+import { Loader } from '../../../loader/Loader';
 
 class Recipe extends Component {
 	UNSAFE_componentWillMount() {
@@ -10,8 +10,8 @@ class Recipe extends Component {
 	}
 
 	render() {
-    const recipes = this.props.recipes.data;
-    const {isFetching} = this.props.recipes;
+		const recipes = this.props.recipes.data;
+		const { isFetching } = this.props.recipes;
 		return isFetching ? <Loader /> : <RecipeListItems recipes={recipes} />;
 	}
 }
