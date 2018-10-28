@@ -13,7 +13,10 @@ import {
 	GET_MY_RECIPE_FAIL,
 	GET_MY_RECIPE_BY_ID_INIT,
 	GET_MY_RECIPE_BY_ID_SUCCESS,
-	GET_MY_RECIPE_BY_ID_FAIL
+	GET_MY_RECIPE_BY_ID_FAIL,
+	GET_FILE_INIT,
+	GET_FILE_SUCCESS,
+	GET_FILE_FAIL
 } from './types';
 import axios from 'axios';
 
@@ -170,4 +173,36 @@ export const createMyRecipe = myRecipeData => {
 	return axios
 		.post(`http://localhost:3000/my-recipes`, myRecipeData)
 		.then(res => res.data, err => Promise.reject(err.response.data.errors));
+};
+
+// FILE UPLOAD ACTION TYPES
+const getFileUploadInit = () => {
+	return {
+		type: GET_FILE_INIT
+	};
+};
+
+const getFileUploadSuccess = images => {
+	return {
+		type: GET_FILE_SUCCESS,
+		images
+	};
+};
+
+const getFileUploadFail = errors => {
+	return {
+		type: GET_FILE_FAIL,
+		errors
+	};
+};
+
+export const getImages = images => dispatch => {
+	dispatch(getFileUploadInit());
+	axios
+		.post('https://api.cloudinary.com/v1_1/vwphfplv/image/upload', images, {
+			headers: { 'X-Requested-With': 'XMLHttpRequest' }
+		})
+		.then(res => res.data)
+		.then(image => dispatch(getFileUploadSuccess(image)))
+		.catch(({ response }) => dispatch(getFileUploadFail(response.data.errors)));
 };
