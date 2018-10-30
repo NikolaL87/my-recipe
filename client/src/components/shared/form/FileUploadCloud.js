@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
+import { Message } from 'semantic-ui-react';
+import * as actions from '../../../actions';
+import { connect } from 'react-redux';
 
 class FileUploadField extends Component {
 	constructor() {
-		super();
-
-		this.state = {
-			images: []
-		};
-
+    super();
+    
 		this.handleDrop = this.handleDrop.bind(this);
 	}
 
@@ -24,44 +23,38 @@ class FileUploadField extends Component {
 			formData.append('upload_preset', 'vwphfplv'); // Replace the preset name with your own
 			formData.append('api_key', '837342766361987'); // Replace API key with your own Cloudinary key
 			formData.append('timestamp', (Date.now() / 1000) | 0);
-
-			// Make an AJAX upload request using Axios (replace Cloudinary URL below with your own)
-			return axios
-				.post('https://api.cloudinary.com/v1_1/vwphfplv/image/upload', formData, {
-					headers: { 'X-Requested-With': 'XMLHttpRequest' }
-				})
-				.then(response => {
-					const data = response.data;
-					this.setState({ images: data });
-					// const fileURL = data.secure_url; // You should store this URL for future references in your app
-				});
-		});
-
+        this.props.dispatch(actions.postFileUploadUrl(formData))
+    });
+    
 		// Once all the files are uploaded
-		axios.all(uploaders).then(() => {
-			// ... perform after upload is successful operation
-		});
-	};
+		axios.all(uploaders).then(() => {});
+  };
+
 	render() {
 		const {
 			label,
-			meta: { touched, error },
-			name
-		} = this.props;
-		let images = this.state.images.url;
-		console.log('Cloud', images);
+			meta: { touched, error, warning }
+    } = this.props;
 		return (
 			<div className="form-group">
 				<label>{label}</label>
 				<div className="input-group">
-					<Dropzone images={images} name={name} onDrop={this.handleDrop} multiple accept="image/*">
+					<Dropzone name="recipeImage" onDrop={this.handleDrop} multiple accept="image/*">
 						<p>Drop your files or click here to upload</p>
 					</Dropzone>
 				</div>
-				{touched && (error && <div className="alert alert-danger">{error}</div>)}
+        {touched &&
+					((error && <Message color="red">{error}</Message>) ||
+						(warning && <Message color="red">{warning}</Message>))}
 			</div>
 		);
 	}
 }
 
-export default FileUploadField;
+function mapStateToProps(state) {
+	return {
+		file: state.file.data
+	};
+}
+
+export default connect(mapStateToProps)(FileUploadField);

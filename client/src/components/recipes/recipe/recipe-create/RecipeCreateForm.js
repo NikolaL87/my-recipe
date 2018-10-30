@@ -6,11 +6,13 @@ import { TextAreaField } from '../../../shared/form/TextAreaField';
 import { renderIngredients } from '../../../shared/form/ArrayFields';
 import { SelectField } from '../../../shared/form/SelectField';
 import FileUploadField from '../../../shared/form/FileUploadCloud';
+import { connect } from 'react-redux';
+
 import { validate } from '../../../shared/form/Validators';
 
 class RecipeCreateForm extends Component {
 	render() {
-		const { handleSubmit, submitting, submitCb, options } = this.props;
+    const { handleSubmit, submitting, submitCb, options} = this.props;
 		return (
 			<form onSubmit={handleSubmit(submitCb)}>
 				<Field name="recipeTitle" component={InputField} placeholder="Title" type="text" label={'Title'} />
@@ -53,10 +55,7 @@ class RecipeCreateForm extends Component {
 					label={'Write your notes'}
 				/>
 				<Divider hidden />
-				{/* <Dropzone name="recipeImage" onDrop={this.handleDrop} multiple accept="image/*">
-					<p>Drop your files or click here to upload</p>
-				</Dropzone> */}
-				<Field name="recipeImage" label="Recipe Image" component={FileUploadField} />
+				<Field name="recipeImage" label="Recipe Image" component={FileUploadField}  />
 
 				<Divider hidden />
 				<Button type="submit" secondary disabled={submitting}>
@@ -68,10 +67,21 @@ class RecipeCreateForm extends Component {
 	}
 }
 
+function mapStateToProps(state) {
+	return {
+		file: state.file.data
+	};
+}
+
+RecipeCreateForm = connect(
+  mapStateToProps,
+)(RecipeCreateForm);
+
 RecipeCreateForm = reduxForm({
 	// a unique name for the form
 	form: 'RecipeCreateForm',
-	validate
+  validate,
+  enableReinitialize: true
 })(RecipeCreateForm);
 
 export default RecipeCreateForm;

@@ -182,10 +182,10 @@ const getFileUploadInit = () => {
 	};
 };
 
-const getFileUploadSuccess = images => {
+const getFileUploadSuccess = file => {
 	return {
 		type: GET_FILE_SUCCESS,
-		images
+		file
 	};
 };
 
@@ -196,13 +196,24 @@ const getFileUploadFail = errors => {
 	};
 };
 
-export const getImages = images => dispatch => {
-	dispatch(getFileUploadInit());
-	axios
-		.post('https://api.cloudinary.com/v1_1/vwphfplv/image/upload', images, {
-			headers: { 'X-Requested-With': 'XMLHttpRequest' }
-		})
-		.then(res => res.data)
-		.then(image => dispatch(getFileUploadSuccess(image)))
-		.catch(({ response }) => dispatch(getFileUploadFail(response.data.errors)));
+// export const postFileUploadUrl = myRecipeData => {
+// 	return axios
+//   .post('https://api.cloudinary.com/v1_1/vwphfplv/image/upload', myRecipeData, {
+//     headers: { 'X-Requested-With': 'XMLHttpRequest' }
+//   })
+//     .then(res => res.data)
+//     .then(file => getFileUploadSuccess(file))
+    
+// };
+
+export const postFileUploadUrl = myRecipeData => dispatch => {
+  dispatch(getFileUploadInit());
+	return axios
+  .post('https://api.cloudinary.com/v1_1/vwphfplv/image/upload', myRecipeData, {
+    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+  })
+  .then(res => res.data)
+  .then(file => dispatch(getFileUploadSuccess(file)))
+  .catch(({ response }) => dispatch(getFileUploadFail(response.data.errors)));
+    
 };
