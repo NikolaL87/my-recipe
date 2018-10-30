@@ -657,42 +657,29 @@
       "id": "R18kZW9"
     },
     {
-      "recipeCategory": "appetizers",
+      "recipeTitle": "Test",
+      "recipeDescription": "Test description",
+      "recipeSource": "Source",
+      "recipeMainIngredient": "Main",
+      "recipeCategory": "bread",
       "ingredients": [
         {
-          "measure": "1 Cup Sugar",
-          "item": "1 Cup Nonfat dry milk powder",
-          "prepNotes": "1 Cup Powdered non-dairy creamer",
-          "quantity": "1/4 Cup Instant coffee granules"
+          "quantity": "Ingr",
+          "measure": "Ingr",
+          "item": "Ingr",
+          "prepNotes": "Ingr"
         }
       ],
-      "recipeTitle": "Test",
-      "recipeDescription": "Test",
-      "recipeSource": "Test",
-      "recipeMainIngredient": "Test",
-      "recipePreparation": "Test",
-      "recipeNotes": "Test",
-      "recipeImage": "https://photos.bigoven.com/recipe/hero/frappe-mocha.jpg?h=500&w=500",
-      "id": "jx0QhUC"
+      "recipePreparation": "Preparation",
+      "recipeNotes": "Write notes",
+      "recipeImage": "http://res.cloudinary.com/dezez0fsn/image/upload/v1540931061/yxkw1rxhebr66l6xuexa.jpg",
+      "id": "grUvab5"
     },
     {
-      "recipeTitle": "Test",
-      "recipeDescription": "Tdsada",
-      "recipeSource": "dsad",
-      "recipeMainIngredient": "dsaddas",
-      "recipeCategory": "desserts",
-      "ingredients": [
-        {
-          "quantity": "dasda",
-          "measure": "dasdas",
-          "item": "dasdsa",
-          "prepNotes": "dsadas"
-        }
-      ],
-      "recipePreparation": "dasdas",
-      "recipeNotes": "dsadas",
-      "recipeImage": "https://photos.bigoven.com/recipe/hero/frappe-mocha.jpg?h=500&w=500",
-      "id": "e4d1SXr"
+      "recipeTitle": "Title",
+      "recipeImage": "http://res.cloudinary.com/dezez0fsn/image/upload/v1540931136/ayzhpum9culu1ji5k4d1.png",
+      "recipeMainIngredient": "Main",
+      "id": "4yMzr1G"
     }
   ]
 }

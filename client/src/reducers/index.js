@@ -9,6 +9,7 @@ import {
 	myRecipeReducer,
 	myRecipeSelectedReducer
 } from './recipesReducer';
+import { fileUploadReducer } from './fileUploadReducer';
 
 export default combineReducers({
 	errors: errorReducer,
@@ -17,5 +18,6 @@ export default combineReducers({
 	recipeSelected: recipeSelectedReducer,
 	myRecipe: myRecipeReducer,
 	myRecipeSelected: myRecipeSelectedReducer,
+	file: fileUploadReducer,
 	form: formReducer
 });
