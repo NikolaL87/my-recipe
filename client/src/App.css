@@ -12,8 +12,8 @@
 	display: block;
 }
 textarea {
-  width: 100%;
-  resize: none;
+	width: 100%;
+	resize: none;
 }
 .field-wrap + .field-wrap {
 	margin-top: 10px;
@@ -46,14 +46,14 @@ textarea {
 	margin: 0;
 }
 .list-unstyled {
-  list-style: none;
-  padding: 0;
+	list-style: none;
+	padding: 0;
 }
 .ingredient-field {
-  display: inline-block;
-  margin-right: 2%;
-  margin-bottom: 10px;
-  width: 22%;
+	display: inline-block;
+	margin-right: 2%;
+	margin-bottom: 10px;
+	width: 22%;
 }
 .loader {
 	border: 16px solid #f3f3f3;
@@ -70,7 +70,23 @@ textarea {
 	top: 50%;
 	transform: translateY(-50%);
 }
-
+img {
+	max-width: 100%;
+	height: auto;
+}
+.drop-zone {
+	width: 150px;
+	height: 150px;
+	border: 1px solid;
+	border-style: dotted;
+	cursor: pointer;
+}
+.drop-text {
+	text-align: center;
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+}
 /* Safari */
 @-webkit-keyframes spin {
 	0% {

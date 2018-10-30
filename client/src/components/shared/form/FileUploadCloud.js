@@ -35,12 +35,23 @@ class FileUploadField extends Component {
 			label,
 			meta: { touched, error, warning }
 		} = this.props;
+		const { url } = this.props.file;
 		return (
 			<div className="form-group">
 				<label>{label}</label>
 				<div className="input-group">
-					<Dropzone name="recipeImage" onDrop={this.handleDrop} multiple accept="image/*">
-						<p>Drop your files or click here to upload</p>
+					<Dropzone
+						className="drop-zone"
+						name="recipeImage"
+						onDrop={this.handleDrop}
+						multiple
+						accept="image/*"
+					>
+						{url ? (
+							<img src={url} alt="" />
+						) : (
+							<p className="drop-text">Drop your files or click here to upload</p>
+						)}
 					</Dropzone>
 				</div>
 				{touched &&
