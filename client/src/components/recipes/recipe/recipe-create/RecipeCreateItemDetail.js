@@ -58,16 +58,18 @@ class RecipeCategoryListItemDetail extends Component {
 		);
 	}
 	secondTab() {
-		const { myRecipeSelected } = this.props;
+		const recipeImage = this.props.myRecipeSelected.recipeImage;
+
 		return (
 			<Image.Group size="small">
 				<div>
-					{myRecipeSelected.recipeDetailImage &&
-						myRecipeSelected.recipeDetailImage.map(({ image }, index) => {
-							return <Image key={index} src={image} />;
-						})}
+					<Image src={recipeImage} />;
 				</div>
 			</Image.Group>
+			// {myRecipeSelected.recipeDetailImage &&
+			// 	myRecipeSelected.recipeDetailImage.map(({ image }, index) => {
+			// 		return <Image key={index} src={image} />;
+			// 	})}
 		);
 	}
 	thirdTab() {

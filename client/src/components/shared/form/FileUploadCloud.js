@@ -7,8 +7,8 @@ import { connect } from 'react-redux';
 
 class FileUploadField extends Component {
 	constructor() {
-    super();
-    
+		super();
+
 		this.handleDrop = this.handleDrop.bind(this);
 	}
 
@@ -23,18 +23,18 @@ class FileUploadField extends Component {
 			formData.append('upload_preset', 'vwphfplv'); // Replace the preset name with your own
 			formData.append('api_key', '837342766361987'); // Replace API key with your own Cloudinary key
 			formData.append('timestamp', (Date.now() / 1000) | 0);
-        this.props.dispatch(actions.postFileUploadUrl(formData))
-    });
-    
+			this.props.dispatch(actions.postFileUploadUrl(formData));
+		});
+
 		// Once all the files are uploaded
 		axios.all(uploaders).then(() => {});
-  };
+	};
 
 	render() {
 		const {
 			label,
 			meta: { touched, error, warning }
-    } = this.props;
+		} = this.props;
 		return (
 			<div className="form-group">
 				<label>{label}</label>
@@ -43,7 +43,7 @@ class FileUploadField extends Component {
 						<p>Drop your files or click here to upload</p>
 					</Dropzone>
 				</div>
-        {touched &&
+				{touched &&
 					((error && <Message color="red">{error}</Message>) ||
 						(warning && <Message color="red">{warning}</Message>))}
 			</div>

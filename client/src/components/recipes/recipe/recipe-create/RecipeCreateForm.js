@@ -11,8 +11,14 @@ import { connect } from 'react-redux';
 import { validate } from '../../../shared/form/Validators';
 
 class RecipeCreateForm extends Component {
+	componentWillReceiveProps(nextProps) {
+		const { change } = nextProps;
+		const file = this.props.file.data;
+		change('recipeImage', file.url);
+	}
 	render() {
-    const { handleSubmit, submitting, submitCb, options} = this.props;
+		const { handleSubmit, submitting, submitCb, options, invalid, pristine } = this.props;
+		const { isFetching } = this.props.file;
 		return (
 			<form onSubmit={handleSubmit(submitCb)}>
 				<Field name="recipeTitle" component={InputField} placeholder="Title" type="text" label={'Title'} />
@@ -55,12 +61,18 @@ class RecipeCreateForm extends Component {
 					label={'Write your notes'}
 				/>
 				<Divider hidden />
-				<Field name="recipeImage" label="Recipe Image" component={FileUploadField}  />
+				<Field name="recipeImage" label="Recipe Image" component={FileUploadField} />
 
 				<Divider hidden />
-				<Button type="submit" secondary disabled={submitting}>
-					Save your recipe
-				</Button>
+				{isFetching ? (
+					<Button type="submit" secondary disabled={true}>
+						Save your recipe
+					</Button>
+				) : (
+					<Button type="submit" secondary disabled={invalid || submitting || pristine}>
+						Save your recipe
+					</Button>
+				)}
 				<Divider hidden />
 			</form>
 		);
@@ -69,19 +81,17 @@ class RecipeCreateForm extends Component {
 
 function mapStateToProps(state) {
 	return {
-		file: state.file.data
+		file: state.file
 	};
 }
 
-RecipeCreateForm = connect(
-  mapStateToProps,
-)(RecipeCreateForm);
+RecipeCreateForm = connect(mapStateToProps)(RecipeCreateForm);
 
 RecipeCreateForm = reduxForm({
 	// a unique name for the form
 	form: 'RecipeCreateForm',
-  validate,
-  enableReinitialize: true
+	validate,
+	enableReinitialize: true
 })(RecipeCreateForm);
 
 export default RecipeCreateForm;
