@@ -196,24 +196,13 @@ const getFileUploadFail = errors => {
 	};
 };
 
-// export const postFileUploadUrl = myRecipeData => {
-// 	return axios
-//   .post('https://api.cloudinary.com/v1_1/vwphfplv/image/upload', myRecipeData, {
-//     headers: { 'X-Requested-With': 'XMLHttpRequest' }
-//   })
-//     .then(res => res.data)
-//     .then(file => getFileUploadSuccess(file))
-    
-// };
-
 export const postFileUploadUrl = myRecipeData => dispatch => {
-  dispatch(getFileUploadInit());
+	dispatch(getFileUploadInit());
 	return axios
-  .post('https://api.cloudinary.com/v1_1/vwphfplv/image/upload', myRecipeData, {
-    headers: { 'X-Requested-With': 'XMLHttpRequest' }
-  })
-  .then(res => res.data)
-  .then(file => dispatch(getFileUploadSuccess(file)))
-  .catch(({ response }) => dispatch(getFileUploadFail(response.data.errors)));
-    
+		.post('https://api.cloudinary.com/v1_1/vwphfplv/image/upload', myRecipeData, {
+			headers: { 'X-Requested-With': 'XMLHttpRequest' }
+		})
+		.then(res => res.data)
+		.then(file => dispatch(getFileUploadSuccess(file)))
+		.catch(({ response }) => dispatch(getFileUploadFail(response.data.errors)));
 };
