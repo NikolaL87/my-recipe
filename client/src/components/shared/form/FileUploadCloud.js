@@ -28,7 +28,11 @@ class FileUploadField extends Component {
 
 		// Once all the files are uploaded
 		axios.all(uploaders).then(() => {});
-	};
+  };
+  
+  componentWillUnmount(){
+    this.props.dispatch(actions.getFileUploadInit())
+  }
 
 	render() {
 		const {

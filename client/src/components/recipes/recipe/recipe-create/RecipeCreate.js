@@ -22,7 +22,6 @@ class RecipeCreate extends Component {
 		actions
 			.createMyRecipe(myRecipeData)
 			.then(recipe => this.setState({ redirect: true }), errors => this.setState({ errors }));
-		console.log('myRecipeData', myRecipeData);
 	}
 
 	render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Field, reduxForm, FieldArray } from 'redux-form';
+import { Field, reduxForm, FieldArray, reset } from 'redux-form';
 import { Button, Divider } from 'semantic-ui-react';
 import { InputField } from '../../../shared/form/InputField';
 import { TextAreaField } from '../../../shared/form/TextAreaField';
@@ -15,9 +15,11 @@ class RecipeCreateForm extends Component {
 		const { change } = nextProps;
 		const file = this.props.file.data;
 		change('recipeImage', file.url);
-	}
+  }
+
 	render() {
-		const { handleSubmit, submitting, submitCb, options, invalid, pristine } = this.props;
+    const { handleSubmit, submitting, submitCb, options, invalid, pristine } = this.props;
+
 		const { isFetching } = this.props.file;
 		return (
 			<form onSubmit={handleSubmit(submitCb)}>

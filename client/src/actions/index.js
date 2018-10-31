@@ -176,7 +176,7 @@ export const createMyRecipe = myRecipeData => {
 };
 
 // FILE UPLOAD ACTION TYPES
-const getFileUploadInit = () => {
+export const getFileUploadInit = () => {
 	return {
 		type: GET_FILE_INIT
 	};
