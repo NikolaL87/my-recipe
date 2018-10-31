@@ -1,22 +1,22 @@
 import {
 	GET_RECIPES_INIT,
 	GET_RECIPES_SUCCESS,
-	GET_RECIPES_FAIL,
+	GET_RECIPES_ERROR,
 	GET_RECIPE_INIT,
 	GET_RECIPE_SUCCESS,
-	GET_RECIPE_FAIL,
+	GET_RECIPE_ERROR,
 	GET_RECIPE_BY_ID_INIT,
 	GET_RECIPE_BY_ID_SUCCESS,
-	GET_RECIPE_BY_ID_FAIL,
+	GET_RECIPE_BY_ID_ERROR,
 	GET_MY_RECIPE_INIT,
 	GET_MY_RECIPE_SUCCESS,
-	GET_MY_RECIPE_FAIL,
+	GET_MY_RECIPE_ERROR,
 	GET_MY_RECIPE_BY_ID_INIT,
 	GET_MY_RECIPE_BY_ID_SUCCESS,
-	GET_MY_RECIPE_BY_ID_FAIL,
-	GET_FILE_INIT,
-	GET_FILE_SUCCESS,
-	GET_FILE_FAIL
+	GET_MY_RECIPE_BY_ID_ERROR,
+	POST_FILE_UPLOAD_INIT,
+	POST_FILE_UPLOAD_SUCCESS,
+	POST_FILE_UPLOAD_ERROR
 } from './types';
 import axios from 'axios';
 
@@ -34,9 +34,9 @@ const getRecipesSuccess = recipes => {
 	};
 };
 
-const getRecipesFail = errors => {
+const getRecipesError = errors => {
 	return {
-		type: GET_RECIPES_FAIL,
+		type: GET_RECIPES_ERROR,
 		errors
 	};
 };
@@ -55,9 +55,9 @@ const getRecipeSuccess = recipe => {
 	};
 };
 
-const getRecipeFail = errors => {
+const getRecipeError = errors => {
 	return {
-		type: GET_RECIPE_FAIL,
+		type: GET_RECIPE_ERROR,
 		errors
 	};
 };
@@ -76,9 +76,9 @@ const getRecipeByIdSuccess = recipeSelected => {
 	};
 };
 
-const getRecipeByIdFail = errors => {
+const getRecipeByIdError = errors => {
 	return {
-		type: GET_RECIPE_BY_ID_FAIL,
+		type: GET_RECIPE_BY_ID_ERROR,
 		errors
 	};
 };
@@ -97,9 +97,9 @@ const getMyRecipeSuccess = myRecipe => {
 	};
 };
 
-const getMyRecipeFail = errors => {
+const getMyRecipeError = errors => {
 	return {
-		type: GET_MY_RECIPE_FAIL,
+		type: GET_MY_RECIPE_ERROR,
 		errors
 	};
 };
@@ -118,9 +118,9 @@ const getMyRecipeByIdSuccess = myRecipeSelected => {
 	};
 };
 
-const getMyRecipeByIdFail = errors => {
+const getMyRecipeByIdError = errors => {
 	return {
-		type: GET_MY_RECIPE_BY_ID_FAIL,
+		type: GET_MY_RECIPE_BY_ID_ERROR,
 		errors
 	};
 };
@@ -130,7 +130,7 @@ export const getRecipes = () => dispatch => {
 		.get('http://localhost:3000/recipes')
 		.then(res => res.data)
 		.then(recipes => dispatch(getRecipesSuccess(recipes)))
-		.catch(({ response }) => dispatch(getRecipesFail(response.data.errors)));
+		.catch(({ response }) => dispatch(getRecipesError(response.data.errors)));
 };
 
 export const getRecipe = () => dispatch => {
@@ -139,7 +139,7 @@ export const getRecipe = () => dispatch => {
 		.get(`http://localhost:3000/recipe`)
 		.then(res => res.data)
 		.then(recipe => dispatch(getRecipeSuccess(recipe)))
-		.catch(({ response }) => dispatch(getRecipeFail(response.data.errors)));
+		.catch(({ response }) => dispatch(getRecipeError(response.data.errors)));
 };
 
 export const getRecipeById = recipeSelected => dispatch => {
@@ -148,7 +148,7 @@ export const getRecipeById = recipeSelected => dispatch => {
 		.get(`http://localhost:3000/recipe/${recipeSelected}`)
 		.then(res => res.data)
 		.then(recipe => dispatch(getRecipeByIdSuccess(recipe)))
-		.catch(({ response }) => dispatch(getRecipeByIdFail(response.data.errors)));
+		.catch(({ response }) => dispatch(getRecipeByIdError(response.data.errors)));
 };
 
 export const getMyRecipe = () => dispatch => {
@@ -157,7 +157,7 @@ export const getMyRecipe = () => dispatch => {
 		.get(`http://localhost:3000/my-recipes`)
 		.then(res => res.data)
 		.then(myRecipe => dispatch(getMyRecipeSuccess(myRecipe)))
-		.catch(({ response }) => dispatch(getMyRecipeFail(response.data.errors)));
+		.catch(({ response }) => dispatch(getMyRecipeError(response.data.errors)));
 };
 
 export const getMyRecipeById = myRecipeSelected => dispatch => {
@@ -166,7 +166,7 @@ export const getMyRecipeById = myRecipeSelected => dispatch => {
 		.get(`http://localhost:3000/my-recipes/${myRecipeSelected}`)
 		.then(res => res.data)
 		.then(recipe => dispatch(getMyRecipeByIdSuccess(recipe)))
-		.catch(({ response }) => dispatch(getMyRecipeByIdFail(response.data.errors)));
+		.catch(({ response }) => dispatch(getMyRecipeByIdError(response.data.errors)));
 };
 
 export const createMyRecipe = myRecipeData => {
@@ -176,33 +176,33 @@ export const createMyRecipe = myRecipeData => {
 };
 
 // FILE UPLOAD ACTION TYPES
-export const getFileUploadInit = () => {
+export const postFileUploadInit = () => {
 	return {
-		type: GET_FILE_INIT
+		type: POST_FILE_UPLOAD_INIT
 	};
 };
 
-const getFileUploadSuccess = file => {
+const postFileUploadSuccess = file => {
 	return {
-		type: GET_FILE_SUCCESS,
+		type: POST_FILE_UPLOAD_SUCCESS,
 		file
 	};
 };
 
-const getFileUploadFail = errors => {
+const postFileUploadError = errors => {
 	return {
-		type: GET_FILE_FAIL,
+		type: POST_FILE_UPLOAD_ERROR,
 		errors
 	};
 };
 
-export const postFileUploadUrl = myRecipeData => dispatch => {
-	dispatch(getFileUploadInit());
+export const postFileUploadData = myRecipeData => dispatch => {
+	dispatch(postFileUploadInit());
 	return axios
 		.post('https://api.cloudinary.com/v1_1/vwphfplv/image/upload', myRecipeData, {
 			headers: { 'X-Requested-With': 'XMLHttpRequest' }
 		})
 		.then(res => res.data)
-		.then(file => dispatch(getFileUploadSuccess(file)))
-		.catch(({ response }) => dispatch(getFileUploadFail(response.data.errors)));
+		.then(file => dispatch(postFileUploadSuccess(file)))
+		.catch(({ response }) => dispatch(postFileUploadError(response.data.errors)));
 };

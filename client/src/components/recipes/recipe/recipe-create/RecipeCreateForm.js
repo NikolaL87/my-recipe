@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Field, reduxForm, FieldArray, reset } from 'redux-form';
+import { Field, reduxForm, FieldArray } from 'redux-form';
 import { Button, Divider } from 'semantic-ui-react';
 import { InputField } from '../../../shared/form/InputField';
 import { TextAreaField } from '../../../shared/form/TextAreaField';
 import { renderIngredients } from '../../../shared/form/ArrayFields';
 import { SelectField } from '../../../shared/form/SelectField';
-import FileUploadField from '../../../shared/form/FileUploadCloud';
+import FileUploadField from '../../../shared/form/FileUploadField';
 import { connect } from 'react-redux';
 
 import { validate } from '../../../shared/form/Validators';
@@ -15,10 +15,10 @@ class RecipeCreateForm extends Component {
 		const { change } = nextProps;
 		const file = this.props.file.data;
 		change('recipeImage', file.url);
-  }
+	}
 
 	render() {
-    const { handleSubmit, submitting, submitCb, options, invalid, pristine } = this.props;
+		const { handleSubmit, submitting, submitCb, options, invalid, pristine } = this.props;
 
 		const { isFetching } = this.props.file;
 		return (
