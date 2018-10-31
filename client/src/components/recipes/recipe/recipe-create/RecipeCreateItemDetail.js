@@ -15,7 +15,7 @@ class RecipeCategoryListItemDetail extends Component {
 		return (
 			<Tab.Pane attached={false}>
 				<React.Fragment>
-					{myRecipeSelected && (
+					{myRecipeSelected.recipeMainIngredient && (
 						<React.Fragment>
 							<h3>MAIN INGREDIENT</h3>
 							<div>
@@ -66,10 +66,6 @@ class RecipeCategoryListItemDetail extends Component {
 					<Image src={recipeImage} />;
 				</div>
 			</Image.Group>
-			// {myRecipeSelected.recipeDetailImage &&
-			// 	myRecipeSelected.recipeDetailImage.map(({ image }, index) => {
-			// 		return <Image key={index} src={image} />;
-			// 	})}
 		);
 	}
 	thirdTab() {

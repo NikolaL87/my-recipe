@@ -57,7 +57,7 @@ let RecipeLeftoversForm = props => {
 					</Grid.Column>
 				</Grid.Row>
 			</Grid>
-			<Divider hidden />
+			<Divider />
 			<Button type="submit" secondary disabled={submitting}>
 				Search Recipe
 			</Button>

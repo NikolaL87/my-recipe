@@ -49,7 +49,7 @@ class FileUploadField extends Component {
 						name="recipeImage"
 						onDrop={this.handleDrop}
 						multiple
-						accept="image/*"
+						accept=".jpeg,.png"
 					>
 						{url ? (
 							<img src={url} alt="" />
