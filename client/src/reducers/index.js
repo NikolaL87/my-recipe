@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
+import authReducer from './authReducer';
 import errorReducer from './errorReducer';
 import {
 	recipesReducer,
@@ -12,7 +13,8 @@ import {
 import { fileUploadReducer } from './fileUploadReducer';
 
 export default combineReducers({
-	errors: errorReducer,
+  auth: authReducer,
+  errors: errorReducer,
 	recipes: recipesReducer,
 	recipe: recipeReducer,
 	recipeSelected: recipeSelectedReducer,
