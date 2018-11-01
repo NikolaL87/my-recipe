@@ -1,16 +1,20 @@
 import React from 'react';
 import { Message, Input } from 'semantic-ui-react';
 
-export const InputField = ({ input, label, type, meta: { touched, error, warning } }) => (
+export const InputField = ({ input, value, onChange, label, type, name, error, placeholder }) => (
 	<div className="field-wrap">
 		<label>{label}</label>
 		<div>
-			<Input {...input} placeholder={label} width={16} type={type} />
-			<div>
-				{touched &&
-					((error && <Message color="red">{error}</Message>) ||
-						(warning && <Message color="red">{warning}</Message>))}
-			</div>
+			<Input
+				{...input}
+				value={value}
+				name={name}
+				onChange={onChange}
+				placeholder={placeholder}
+				width={16}
+				type={type}
+			/>
+			<div>{error && <Message color="red">{error}</Message>}</div>
 		</div>
 	</div>
 );
