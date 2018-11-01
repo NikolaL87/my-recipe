@@ -7,7 +7,7 @@ class RecipeLeftovers extends Component {
 		return (
 			<Container>
 				<h2>Use Up Leftovers</h2>
-				<p>Choose up to 3 ingredients. BigOven will tell you what you can make!</p>
+				<p>Choose up to 3 ingredients. We will tell you what you can make!</p>
 				<Divider />
 				<RecipeLeftoversItem />
 			</Container>
