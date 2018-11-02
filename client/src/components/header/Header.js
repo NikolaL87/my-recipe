@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Input, Menu, Container } from 'semantic-ui-react';
+import { Input, Menu, Container, Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import Logo from 'img/logo.png';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/authActions';
+
 
 class Header extends Component {
 	state = { activeItem: 'logo' };
@@ -13,25 +14,33 @@ class Header extends Component {
 	onLogoutClick(e) {
 		e.preventDefault();
 		this.props.dispatch(actions.logoutUser());
-	}
-
+  }
+  
 	render() {
-		const { activeItem } = this.state;
+    const { activeItem } = this.state;
 
-		const { isAuthenticated, user } = this.props.auth;
+    const { isAuthenticated, user } = this.props.auth;
 
-		const authLinks = (
-			<React.Fragment>
-				<Menu.Item name="logout" onClick={this.onLogoutClick.bind(this)} active={activeItem === 'login'}>
-					<img
+    const trigger = (
+      <Menu.Item className='user-menu'>
+        <img
 						src={user.avatar}
 						alt={user.name}
-						style={{ width: '25px', marginRight: '5px' }}
+						style={{ width: '35px', marginRight: '5px', borderRadius: '50%' }}
 						title="You must have a Gravatar connect to your email to display an Image"
-					/>
-					Logout
-				</Menu.Item>
-			</React.Fragment>
+          />
+          {user.name}
+      </Menu.Item>
+    )
+		
+		const authLinks = (
+      <Dropdown trigger={trigger} pointing='top left' icon={null}>
+        <Dropdown.Menu>
+          <Dropdown.Item icon='user circle' as={Link} to='/profile' text='Profile' />
+          <Dropdown.Item icon='settings' text='Settings' />
+          <Dropdown.Item icon='sign out' text='Log Out' onClick={this.onLogoutClick.bind(this) }/>
+        </Dropdown.Menu>
+      </Dropdown>
 		);
 
 		const guestsLinks = (
