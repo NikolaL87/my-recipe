@@ -24,6 +24,9 @@ class FileUploadField extends Component {
 			formData.append('api_key', '837342766361987'); // Replace API key with your own Cloudinary key
 			formData.append('timestamp', (Date.now() / 1000) | 0);
 			this.props.dispatch(actions.postFileUploadData(formData));
+			return {
+				formData
+			};
 		});
 
 		// Once all the files are uploaded
