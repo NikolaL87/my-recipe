@@ -11,6 +11,10 @@
 .ui.input {
 	display: block;
 }
+.ui.top.left.pointing.dropdown>.menu {
+  margin-top: 0.4em;
+  width: 90%;
+}
 textarea {
 	width: 100%;
 	resize: none;

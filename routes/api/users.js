@@ -34,7 +34,7 @@ router.post('/register', (req, res) => {
 			errors.email = 'Email allready exists';
 			return res.status(400).json(errors);
 		} else {
-			const avatar = gravatar.url(req.body.emai, {
+			const avatar = gravatar.url(req.body.email, {
 				s: '200', // Size
 				r: 'pg', // Rating
 				d: 'mm' // Default
